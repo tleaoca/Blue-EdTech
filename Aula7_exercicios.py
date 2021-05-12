@@ -153,3 +153,15 @@ def cidadeEscolhida(nomeCidade,diasViagem):
 
 custoGeral = cidadeEscolhida('Manaus',4)
 print(custoGeral)
+
+#Gastos Extras
+#5 - Modifique essa nova função criada e adicione um terceiro argumento: 'gastos_extras' e some esse valor
+#ao total da viagem.
+#Exiba no console o custo total de uma viagem de 12 dias para 'Manaus' gastando R$ 800,00 adicionais.
+
+def cidadeEscolhida(nomeCidade,diasViagem,gastosExtras):
+    custoViagemTotal = custoHotel(diasViagem) + custoAviao(nomeCidade) + custoCarro(diasViagem) + gastosExtras
+    return custoViagemTotal
+
+custoGeral = cidadeEscolhida('Manaus',12,800)
+print(custoGeral)
