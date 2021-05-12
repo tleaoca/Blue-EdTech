@@ -128,7 +128,28 @@ print(valor)
 #- Você pode receber apenas um desconto;
 #- Retorne o custo.
 
+def custoCarro(dias,valorDiaria=40):
+    custo = dias*valorDiaria
+    if dias >= 7:
+        custoFinal = custo - 50
+    elif dias >= 3:
+        custoFinal = custo - 20
+    else:
+        custoFinal = custo
+    return custoFinal
 
+valorFinal = custoCarro(2)
+print(valorFinal)
 
+#Cálculo Total
+#4 - Agora com essas três funções criadas, declare uma função que receba a cidade e quantidade de dias
+# e retorne o custo total da viagem.
+#- Reutilize as funções já criadas.
+#- Exiba o total da viagem chamando apenas a nova função declarada!
 
+def cidadeEscolhida(nomeCidade,diasViagem):
+    custoViagemTotal = custoHotel(diasViagem) + custoAviao(nomeCidade) + custoCarro(diasViagem)
+    return custoViagemTotal
 
+custoGeral = cidadeEscolhida('Manaus',4)
+print(custoGeral)

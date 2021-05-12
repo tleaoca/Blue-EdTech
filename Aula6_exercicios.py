@@ -51,8 +51,9 @@ print(a)
 def calculoimc(peso,altura):
     imc = peso / altura ** 2
     return imc
-
-valorimc = calculoimc(105,1.75)
+peso = float(input('Peso: ').replace(',','.'))
+altura = float(input('Altura: ').replace(',','.'))
+valorimc = calculoimc(peso,altura)
 print(f'{valorimc:.2f}')
 
 #6.	Escreva uma função que, dado um número nota representando a nota de um estudante, converte o valor de 
