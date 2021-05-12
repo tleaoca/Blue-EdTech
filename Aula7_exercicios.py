@@ -59,21 +59,21 @@ n3 = float(input('Nota3: '))
 def calculoMedia(n1,n2,n3):
     if n1>n2 and n1>n3:
         nota1 = n1
-    if n2>n1 and n2>n3:
+    elif n2>n1 and n2>n3:
         nota1 = n2
-    if n3>n1 and n3>n2:
+    else: 
         nota1 = n3
-    if n1>n2 and n2<n3:
+    if n1>n2 and n1<n3:
         nota2 = n1
-    if n2>n1 and n2<n3:
+    elif n2>n1 and n2<n3:
         nota2 = n2
-    if n3>n1 and n3<n2:
+    else: 
         nota2 = n3
     if n1<n2 and n1<n3:
         nota3 = n1
-    if n2<n1 and n2<n3:
+    elif n2<n1 and n2<n3:
         nota3 = n2
-    if n3<n1 and n3<n2:
+    else: 
         nota3 = n3   
     mediaTres = (n1+n2+n3)/3
     mediaDuas = (nota1 + nota2) / 2
@@ -81,6 +81,54 @@ def calculoMedia(n1,n2,n3):
     print(f'Media com 2 maiores notas: {mediaDuas}')
     print(f'Maior nota: {nota1}')
     print(f'Menor nota: {nota3}')
-
-
+    
 calculoMedia(n1,n2,n3)
+
+#PROJETO: Gastos com viagem -  Escrever uma aplicação utilizando funções que calcule os gastos com passagem,
+#hospedagem, aluguel de carro e gastos extras de uma viagem para uma determinada cidade.
+
+#Hospedagem - Crie uma função chamada 'custo_hotel' que receba um parâmetro (argumento) chamado 'noites'
+#e retorne o custo total do hotel, sendo que 1 noite custa R$ 140,00.
+
+def custoHotel(noites,valorNoite=140):
+    custoTotal = noites*valorNoite
+    return custoTotal
+
+valorFinal = custoHotel(4)
+print(valorFinal)
+
+#Passagem
+#2 - Crie uma função chamada 'custo_aviao' que receba o nome da cidade e retorne o custo da passagem de avião,
+# sendo que passagem para:
+#- São Paulo custa R$ 312,00;
+#- Porto Alegre custa R$ 447,00;
+#- Recife custa R$ 831,00;
+#- Manaus custa R$ 986,00.
+
+def custoAviao(nome):
+    if nome == 'São Paulo':
+        valorPassagem = 312
+    elif nome == 'Porto Alegre':
+        valorPassagem = 447
+    elif nome == 'Recife':
+        valorPassagem = 831
+    elif nome == 'Manaus':
+        valorPassagem = 986
+    return valorPassagem
+
+valor = custoAviao('Manaus')
+print(valor)
+
+#Aluguel de Carro
+#3 - Crie uma função chamada 'custo_carro' que receba um parâmetro chamado 'dias'.
+#- Calcule o custo do aluguel do carro sendo que:
+#- A cada dia o carro custa R$ 40,00;
+#- Alugando 7 dias ou +: R$ 50,00 de desconto;
+#- Alugando 3 dias ou +: R$ 20,00 de desconto;
+#- Você pode receber apenas um desconto;
+#- Retorne o custo.
+
+
+
+
+
