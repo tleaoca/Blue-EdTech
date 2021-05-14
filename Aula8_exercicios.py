@@ -20,6 +20,8 @@ print(l)
 # 2.	Faça um jogo da forca. O programa terá uma lista de palavras lidas de um arquivo texto e escolherá
 #uma aleatoriamente. O jogador poderá errar 6 vezes antes de ser enforcado.
 
+
+
 # 3.	Utilizando listas faça um programa que faça 5 perguntas para uma pessoa sobre um crime. As perguntas são:
 # •	"Telefonou para a vítima?"
 # •	"Esteve no local do crime?"
@@ -71,3 +73,12 @@ if len(divisores) == 2:
     print('Numero primo')
 
 # 6.	Escreva um programa onde o usuário digita uma frase e essa frase retorna sem nenhuma vogal.
+
+frase = input('Qual a frase? ')
+vogais = 'aeiou'
+for letra in frase:
+    if letra in vogais:
+        frase = frase.replace(letra,' ')
+print(frase)
+
+
