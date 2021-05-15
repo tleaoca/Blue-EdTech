@@ -50,6 +50,21 @@ else:
 # o cliente forneceu, para então calcular e mostrar o valor do troco. Após esta operação, o programa deverá voltar ao
 # ponto inicial, para registrar a próxima compra. A saída deve ser conforme o exemplo abaixo:
 
+valor = 1 
+listaValores = []
+while valor != 0:
+    valor = float(input('Digite o valor: ').replace(',','.')) 
+    if valor == 0:
+        break
+    else:
+        listaValores.append(valor)
+for n in range(len(listaValores)):
+    print(f'Produto {n+1}: R${listaValores[n]}')
+total = sum(listaValores)
+dinheiro = float(input('Dinheiro: '))
+troco = dinheiro-total
+print(f'Total: R${total}')
+print(f'Troco: R${troco}')   
 
 # 6.	Faça um script que peça ao usuário o número de matérias da escola, ou seja, um inteiro positivo. Em seguida,
 #  ele vai digitando o valor de cada nota, de cada matéria e isso será armazenado numa lista. Ao final, seu script
