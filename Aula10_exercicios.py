@@ -45,7 +45,6 @@ print(f'Altura do maior aluno: {maiorAltura}')
 print(f'Numero do menor aluno: {numeroMenor}')
 print(f'Altura do menor aluno: {menorAltura}')
 
-
 # Exercício 3 - Em uma eleição presidencial existem quatro candidatos. Os votos são informados por meio de código. 
 # Os códigos utilizados são:
 # •	1 , 2, 3  - Votos para os respectivos candidatos (você deve montar a tabela ex: 1 - Jose/ 2- João/etc)
@@ -57,3 +56,82 @@ print(f'Altura do menor aluno: {menorAltura}')
 # •	O total de votos em branco;
 # •	A percentagem de votos nulos sobre o total de votos;
 # •	A percentagem de votos em branco sobre o total de votos. Para finalizar o conjunto de votos tem-se o valor zero.
+
+n = 1
+votosJoao = 0
+votosJose = 0
+votosJosef = 0
+votosNulo = 0
+votosBranco = 0
+while n != 0:
+    n = int(input('Digite seu voto: '))
+    if n == 1:
+        votosJoao += 1
+    elif n == 2:
+        votosJose += 1
+    elif n == 3:
+        votosJosef += 1
+    elif n == 4:
+        votosNulo += 1
+    elif n == 5:
+        votosBranco += 1
+totalVotos = votosBranco+votosJoao+votosJose+votosJosef+votosNulo
+print(f'Joao = {votosJoao}')
+print(f'Jose = {votosJose}')
+print(f'Josef = {votosJosef}')
+print(f'Nulo = {votosNulo}')
+print(f'Branco = {votosBranco}')
+print(f'Porcentagem Branco = {(votosBranco*100/totalVotos):.2f}%')
+print(f'Porcentagem Nulo = {(votosNulo*100/totalVotos):.2f}%')
+
+# Exercício 4 – Codifique um jogo da FORCA. A pessoa digita uma palavra e tem que acertar a palavra digitada.
+
+# DESAFIO - Desenvolver um programa para verificar a nota do aluno em uma prova com 10 questões, o programa
+# deve perguntar ao aluno a resposta de cada questão e ao final comparar com o gabarito da prova assim calcular
+# o total de acertos e a nota (atribuir 1 ponto por resposta certa).  Após cada aluno utilizar o sistema deve ser
+# feita uma pergunta se outro aluno vai utilizar o sistema. Após todos os alunos terem respondido informar:
+# •	Maior e Menor Acerto;
+# •	Total de Alunos que utilizaram o sistema;
+# •	A Média das Notas da Turma.
+# # Gabarito da Prova:
+# # 01 - A
+# # 02 - B
+# # 03 - C
+# # 04 - D
+# # 05 - E
+# # 06 - E
+# # 07 - D
+# # 08 - C
+# # 09 - B
+# # 10 - A
+# Após concluir isto você poderia incrementar o programa permitindo que o professor digite o gabarito da
+# prova antes dos alunos usarem o programa.
+
+gabarito = []
+alunos = []
+notas = []
+def cadastrarG():
+    for n in range(1,11):
+        n = input('Digite o gabarito da {} questão: '.format(n)).upper()
+        gabarito.append(n)
+def cadastrarR():
+    nome = input('Nome: ')
+    nota = 0
+    respostas = []
+    for i in range(1,11):
+        resp = input('Digite a resposta {}: '.format(i)).upper()
+        respostas.append(resp)
+    for i in range(len(gabarito)):
+        if respostas[i] == gabarito[i]:
+            nota += 1
+    alunos.append(nome)
+    notas.append(nota)
+cadastrarG()
+while True:
+  if input('Continuar = ENTER  Sair = 0') == '0':
+    break
+  cadastrarR()
+print('Maior nota: {}'.format(max(notas)))
+print('Menor nota: {}'.format(min(notas))) 
+print('Quantidade de Alunos no sistema: {}'.format(len(alunos)))
+print('Média das {} notas digitadas: {}'.format(len(notas),(sum(notas)/len(notas))))
