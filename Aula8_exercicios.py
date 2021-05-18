@@ -20,7 +20,33 @@ print(l)
 # 2.	Faça um jogo da forca. O programa terá uma lista de palavras lidas de um arquivo texto e escolherá
 #uma aleatoriamente. O jogador poderá errar 6 vezes antes de ser enforcado.
 
-
+palavra = 'CERVEJA'
+palavraForca = ['_' for n in palavra] 
+chances = 0
+print('A palavra e: ', end=' ')
+print(' '.join(palavraForca))
+limiteTentativas = len(palavra) + 6
+for i in range(limiteTentativas):
+    if palavraForca.count('_') == 0 or chances == 6: break    
+    letra = input('Digite a letra: ').upper()
+    if letra in palavraForca:
+        print('Letra já digitada, tente novamente: ')
+        continue
+    if letra in palavra:
+        print('A palavra e: ', end=' ')
+        for n in range(len(palavra)):
+            if letra == palavra[n]:
+                del palavraForca[n]
+                palavraForca.insert(n,letra)
+        print(' '.join(palavraForca))
+    else:
+        chances += 1
+        if chances != 6:
+            print('{} erro, tente outra vez.'.format(chances))       
+if palavraForca.count('_') == 0:
+    print('Parabéns! Você ganhou')
+else:
+    print('Você perdeu!')
 
 # 3.	Utilizando listas faça um programa que faça 5 perguntas para uma pessoa sobre um crime. As perguntas são:
 # •	"Telefonou para a vítima?"

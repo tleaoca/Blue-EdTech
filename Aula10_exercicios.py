@@ -86,6 +86,34 @@ print(f'Porcentagem Nulo = {(votosNulo*100/totalVotos):.2f}%')
 
 # Exercício 4 – Codifique um jogo da FORCA. A pessoa digita uma palavra e tem que acertar a palavra digitada.
 
+palavra = 'CERVEJA'
+palavraForca = ['_' for n in palavra] 
+chances = 0
+print('A palavra e: ', end=' ')
+print(' '.join(palavraForca))
+limiteTentativas = len(palavra) + 6
+for i in range(limiteTentativas):
+    if palavraForca.count('_') == 0 or chances == 6: break    
+    letra = input('Digite a letra: ').upper()
+    if letra in palavraForca:
+        print('Letra já digitada, tente novamente: ')
+        continue
+    if letra in palavra:
+        print('A palavra e: ', end=' ')
+        for n in range(len(palavra)):
+            if letra == palavra[n]:
+                del palavraForca[n]
+                palavraForca.insert(n,letra)
+        print(' '.join(palavraForca))
+    else:
+        chances += 1
+        if chances != 6:
+            print('{} erro, tente outra vez.'.format(chances))       
+if palavraForca.count('_') == 0:
+    print('Parabéns! Você ganhou')
+else:
+    print('Você perdeu!')
+
 # DESAFIO - Desenvolver um programa para verificar a nota do aluno em uma prova com 10 questões, o programa
 # deve perguntar ao aluno a resposta de cada questão e ao final comparar com o gabarito da prova assim calcular
 # o total de acertos e a nota (atribuir 1 ponto por resposta certa).  Após cada aluno utilizar o sistema deve ser
