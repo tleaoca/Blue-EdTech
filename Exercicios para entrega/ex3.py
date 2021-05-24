@@ -1,24 +1,9 @@
-# DESAFIO: Crie um programa que leia nome, sexo e idade de várias pessoas,
-# guardando os dados de cada pessoa em um dicionário e todos os dicionários em uma
-# lista. No final, mostre:
-# A) Quantas pessoas estão cadastradas.
-# B) A média da idade.
-# C) Uma lista com as mulheres.
-# D) Uma lista com as idades que estão acima da média.
-# OBS: O programa deve garantir que o sexo digitado seja válido, e que quando
-# perguntar ao usuário se deseja continuar a resposta seja somente sim ou não.
-
-
-
-# while True:
-#     dic = {}
-#     nome = input('Nome: ')
-#     sexo = input('Sexo (M ou F): ').upper()
-#     if sexo != 'M' and sexo != 'F':
-#         print('Sexo inválido')
-#     idade = int(input('Idade: '))
-#     dic[nome] = {'Sexo':sexo, 'Idade':idade}
-#     print(dic)
+#03 - Utilizando estruturas de repetição com teste lógico, faça um programa que peça uma senha para iniciar
+# seu processamento, só deixe o usuário continuar se a senha estiver correta, após entrar dê boas vindas a seu
+# usuário e apresente a ele o jogo da advinhação, onde o computador vai “pensar” em um número inteiro entre 0 e 20.
+# O jogador vai tentar adivinhar qual número foi escolhido até acertar, a cada palpite do usuário diga a ele se o
+# número escolhido pelo computador é maior ou menor ao que ele palpitou, no final mostre quantos palpites foram
+# necessários para vencer.
 import random
 numero = random.randint(0,20)
 
@@ -44,3 +29,5 @@ while True:
             continue
         else: break
     else: print('Senha inválida.') 
+
+

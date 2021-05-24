@@ -1,37 +1,44 @@
-#PROJETO: Gastos com viagem -  Escrever uma aplicação utilizando funções que calcule os gastos com passagem,
-#hospedagem, aluguel de carro e gastos extras de uma viagem para uma determinada cidade.
+from random import choice
 
-#Hospedagem - Crie uma função chamada 'custo_hotel' que receba um parâmetro (argumento) chamado 'noites'
-#e retorne o custo total do hotel, sendo que 1 noite custa R$ 140,00.
+vocabulario = ["esquistossomose", "naftalina", "ribonucleico", "idiossincratico", "fagocitose", "quinquagesimo"]
 
-def custoHotel(noites,valorNoite=140):
-    custoTotal = noites*valorNoite
-    return custoTotal
+palavra = choice(vocabulario)
 
-def custoAviao(nome):
-    if nome == 'São Paulo':
-        valorPassagem = 312
-    elif nome == 'Porto Alegre':
-        valorPassagem = 447
-    elif nome == 'Recife':
-        valorPassagem = 831
-    elif nome == 'Manaus':
-        valorPassagem = 986
-    return valorPassagem
+print("JOGO DA FORCA 1.0\n")
+print("Bem vindo ao JOGO DA FORCA. Boa sorte!\n")
 
-def custoCarro(dias,valorDiaria=40):
-    custo = dias*valorDiaria
-    if dias >= 7:
-        custoFinal = custo - 50
-    elif dias >= 3:
-        custoFinal = custo - 20
-    else:
-        custoFinal = custo
-    return custoFinal
+chances = 6
+alfabeto = list("abdcefghijklmnopqrstuvwxyz")
+tentativas = []
 
-def cidadeEscolhida(nomeCidade,diasViagem):
-    custoViagemTotal = custoHotel(diasViagem) + custoAviao(nomeCidade) + custoCarro(diasViagem)
-    return custoViagemTotal
+while True:
+	print(tentativas)
+	print("Chances: ",chances)
 
-custoGeral = cidadeEscolhida('Manaus',4)
-print(custoGeral)
+	for letra in palavra:
+		if letra in tentativas:
+			print(letra, end = ' ')
+		else:
+			print('_', end= ' ')
+
+		palpite = input("\nDigite seu palpite ou 'SAIR' para sair do programa!").lower()
+		if palpite == "sair":
+			break	
+		elif palpite not in alfabeto or palpite == '':
+			print("Hein!? Fala direito! Isso não é uma letra!")
+			continue	
+		elif palpite in tentativas:
+			print("Você é desmemoriado ou o quê!? Você já tentou essa letra. Tente outra!")
+			continue
+		tentativas.append(palpite)
+		if palpite in palavra:
+			print("ACERTÔ, MIZERAVI!")
+		else:
+			print("Errou feio, errou rude!")
+			chances-=1
+		if chances == 0:
+			print("Perdeu, pivete! Game over!!! >:)")
+			break
+		elif set(palavra).issubset(set(tentativas)):
+			print("Parabéns, você acertou! Weeee are the champions, my frieeeend!")
+			break
