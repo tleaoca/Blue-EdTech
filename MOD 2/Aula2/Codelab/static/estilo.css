@@ -1,0 +1,33 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.fundo{
+    background-color: rgb(240, 239, 239);
+    border-radius: 20px;
+    border: 1px solid black;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.titulo{
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.elemento-container{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.elemento-item{
+    text-align: center;
+    font-weight: bold;
+}
+#calcular{
+    background-color: blue;
+    justify-content: center;
+    border-radius: 20px;
+    color: white;
+    border: none;
+    padding: 10px;
+}

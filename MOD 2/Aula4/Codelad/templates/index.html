@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Codelab Aula 4</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="static/estilo.css">
+    </head>
+    <body>
+        <div class="fundo">
+            <p><b>Nome:</b> {{nome}}</p>            
+            <p><b>Idade:</b> {{idade}}</p>            
+            {% if doidao %}
+            <img src="{{imgdoidao}}" width="200" height="200">
+            <p>Albert ta doido!</p>
+            {% else %}
+            <img src="{{imgnormal}}" width="200" height="200">
+            <p>Albert ta normal!</p>
+            {% endif %}
+        </div>
+    </body>
+</html>
