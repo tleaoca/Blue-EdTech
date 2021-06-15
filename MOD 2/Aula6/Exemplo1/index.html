@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulário</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="static/estilo.css"/>
+    </head>
+    <body>
+        <h1>Formulário Teste</h1> 
+        <div class="geral">          
+            <form action="" method="POST">
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" placeholder="Digite seu nome..."/>
+            </div>
+            <br/>
+            <div>
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" id="senha"/>
+            </div>
+            <br/>
+            <div class="gen">
+                <u>Gênero:</u><br/>
+                <label for="m">Masculino</label>
+                <input type="radio" name="opcao_unica" id="m" value="m"/>
+                <br/>
+                <label for="f">Feminino</label>
+                <input type="radio" name="opcao_unica" id="f" value="f"/>
+                <br/>
+                <label for="o">Outro</label>
+                <input type="radio" name="opcao_unica" id="o" value="o"/>               
+            </div>
+            <br/>
+            <div class="frases">
+                <label for="escolha">Deseja receber emails?</label>
+                <input type="checkbox" name="escolha" id="escolha"/>
+            </div>
+            <div class="frases">
+                <label for="data">Data de nascimento:</label>
+                <input type="date" name="data" id="data"/>
+            </div>
+            <div class="frases">
+                <label for="cidade">Selecione sua cidade:</label>
+                <select id="cidade" name="cidade">
+                    <option disabled selected>Selecione...</option>
+                    <optgroup label="Sul">                    
+                        <option>Porto Alegre</option>                   
+                    </optgroup>
+                    <optgroup label="Sudeste">
+                        <option>São Paulo</option>
+                    </optgroup>
+                    <optgroup label="Norte">
+                        <option>Manaus</option>
+                    </optgroup>
+                    <optgroup label="Nordeste">
+                        <option>Recife</option>
+                    </optgroup>
+                </select><br/><br/>
+                <div id="botao"><input type="submit" value="Enviar"/></div>
+            </div>
+            </form>
+            <br/>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1{
+    background-color: darkblue;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+.geral{
+    display: flex;
+    background-color: lightblue;
+    border: 1px solid black;
+    color: black;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+.gen{
+    text-align: center;
+}
+.frases{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+#botao{
+    text-align: center;
+}
