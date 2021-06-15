@@ -1,2 +1,1 @@
-# blue
-Modulo 1 - Blue
+# Curso Blue Edtech
