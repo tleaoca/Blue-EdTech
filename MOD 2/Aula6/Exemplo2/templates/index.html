@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulario</title>
+        <meta charset="utf-8">
+        <style>
+            body{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif             
+            }
+            .fundo{
+                background-color: rgb(230, 230, 230);
+                padding: 25px;
+                margin-left: 30%;
+                margin-right: 30%;
+            }
+            .texto{
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+            .opcao{
+                display: flex;
+                justify-content: flex-start;
+                margin-top: 25px;
+                margin-bottom: 25px;
+            }
+            .enviar{
+                display: flex;
+                justify-content: flex-start;
+                background-color: blue;
+                color: white;
+                padding: 10px;
+                border-radius: 10px; 
+                border: none;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="" method="POST">
+            <div class="fundo">
+                <div class="texto">
+                    <label for="nome">Digite o seu nome: </label>
+                    <input type="text" name="nome" id="nome" placeholder="Digite seu nome..."/>
+                </div>
+                <div class="texto">
+                    <label for="sobrenome">Digite o seu sobrenome: </label>
+                    <input type="text" name="sobrenome" id="sobrenome" placeholder="Digite seu sobrenome..."/>
+                </div>
+                <div class="opcao">
+                    <input type="radio" name="opunica" id="op1"/> 
+                    <label for="op1">Opção 1 </label>
+                    <input type="radio" name="opunica" id="op2"/> 
+                    <label for="op2">Opção 2 </label>                
+                </div>
+                <div class="opcao">
+                    <input type="checkbox" name="cop1" id="cop1"/>
+                    <label for="cop1">Opção 1</label>
+                    <input type="checkbox" name="cop2" id="cop2" />
+                    <label for="cop2">Opção 2 </label>                
+                </div>                
+                    <input class="enviar" type="submit" value="Enviar!"/>                
+            </div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulario teste</title>
+        <meta charset="utf-8">
+        <style>
+            body{
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                background-color: rgb(216, 214, 214);
+            }
+            .fundo{
+                background-color: white;
+                border-bottom: 4px solid blue;
+                border-top: 4px solid blue;
+                border-radius: 10px;
+                margin-left: 30%;
+                margin-right: 30%;
+                padding: 20px;
+            }
+            .item{
+                text-align: center;
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+            .botao{                
+                background-color: blue;
+                border: none;
+                color: white;
+                padding: 10px;
+                border-radius: 10px;
+                width: 80px;      
+                text-decoration: none;  
+                margin-top: 15px;
+                margin-bottom: 15px;       
+            }
+        </style>
+    </head>
+    <body>        
+        <div class="fundo">
+            {% if not criatura %}
+            <div class="item">
+                <a href="www.blueedtech.com.br">
+                    <img src="static/logo-blue-croped.gif" width="200" alt="Logo blue"/>
+                </a>                    
+            </div>
+            <form method="POST">              
+                <div class="item">
+                    <label for="nome">Digite seu nome:</label>
+                    <input type="text" name="nome" id="nome" placeholder="Digite seu nome..."/>
+                </div>
+                <div class="item">
+                    <label for="sobrenome">Digite seu sobrenome:</label>
+                    <input type="text" name="sobrenome" id="sobrenome" placeholder="Digite seu sobrenome..."/>
+                </div>
+                <div class="item">
+                    <input type="radio" name="criatura" id="criatura1" value="elfo" checked><label for="criatura1">Elfo</label>
+                    <input type="radio" name="criatura" id="criatura2" value="orc" ><label for="criatura2">Orc</label>
+                    <input type="radio" name="criatura" id="criatura3" value="hobbit" ><label for="criatura3">Hobbit</label>
+                </div>
+                <div class="item">
+                    <input class="botao" type="submit" value="Jogar!"/>
+                </div>
+            </form>
+
+            {% else %}
+
+            
+                <div class="item">
+                    {{ nome }} {{ sobrenome }}, você é um <b>{{ criatura }}</b>
+                </div>
+                <div class="item">
+                    <img src="{{ imagem }}"/>
+                </div>
+                <div class="item"><a href="/" class="botao">Jogar novamente!</a></div>
+            
+
+            {% endif %}
+            
+        </div>        
+    </body>
+</html>
