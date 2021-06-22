@@ -1,13 +1,14 @@
 body {
 	font-family: 'Verdana', sans-serif;
+    background-color: blue;
 }
 
 .calculadora-dano {
     margin-left: 20%;
     margin-right: 20%;
-    border: 1px solid #878787;
+    border: 1px solid #090124;
     border-radius: 20px;
-    background-color: #F8F8F8;
+    background-color: #f8f8f8;
 }
 
 .linha-container {
@@ -15,8 +16,8 @@ body {
     flex-flow: row;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 
 .elementos-container {
