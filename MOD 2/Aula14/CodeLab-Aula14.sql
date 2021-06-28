@@ -54,3 +54,8 @@ FROM pagamentos pa
 JOIN clientes c ON pa.numcliente = c.numcliente 
 GROUP BY c.nomecontato, c.sobrenomecontato, c.cidade, c.estado, c.limitecredito 
 ORDER BY "Valor total" DESC
+-- 5
+SELECT * 
+FROM funcionarios f
+JOIN lojas l ON f.codloja = l.codloja 
+JOIN clientes c ON f.numfuncionario = c.numfuncionarioreprvendas 
