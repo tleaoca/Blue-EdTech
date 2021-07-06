@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Burguers</title>
+    <link rel="icon shortcut" href="https://image.flaticon.com/icons/png/512/4972/4972091.png">
+    <link rel="stylesheet" href="/static/style.css"/>
+</head>
+
+<body>
+    {% include 'header.html' %}
+   
+        <br><table class="tabela">
+            <tr class="tabela_header">
+                <th>ID</th>
+                <th>NOME</th>
+                <th>INGREDIENTES</th>
+                <th>PREÇO</th>
+                <th>IMAGEM</th>
+            </tr>
+
+            {% for registro in registros %}
+    
+            <tr>
+                <td>{{ registro["id"] }}</td>
+                <td>{{ registro["nome"] }}</td>
+                <td>{{ registro["ingredientes"] }}</td>
+                <td>R${{ registro["preco"] }}</td>
+                <td><img src="{{ registro['imagem_url'] }}" alt="{{ registro['nome'] }}" width="80" height="120"></td>
+                <td><a href="/read/{{ registro['id'] }}" class="botao">Visualizar</a></td>
+                <td><a href="/update/{{ registro['id'] }}" class="botao">Editar</a></td>
+                <td><a href="/delete/{{ registro['id'] }}" class="botao">Remover</a></td>
+            </tr>
+
+            {% endfor %}
+    
+
+
+        </table>
+
+        
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Burguers</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    {% include 'header.html' %}
+    
+    <div class="bloco">
+        <h2>Item: {{ registro.nome }}</h2>
+    </div>
+
+    <div class="bloco">
+        <img src="{{ registro.imagem_url }}" alt="{{ registro.nome }}" width="200px" height="200px" id="imagemSingle" />
+    </div>
+
+    <div class="bloco">
+        <h3> Preço: R${{ registro.preco }}</h3>        
+    </div>
+    <div class="bloco">
+        <h3> Descrição: {{ registro.ingredientes }}</h3>        
+    </div>    
+    <div class="bloco">
+        <a href="/read" class="botao">Voltar</a>
+        <a href="/update/{{ registro['id'] }}" class="botao">Editar</a>
+        <a href="/delete/{{ registro['id'] }}" class="botao">Remover</a>
+    </div>
+</body>
+</html>
