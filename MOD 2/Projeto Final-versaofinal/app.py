@@ -1,3 +1,8 @@
+# Equipe:
+# Paulo Gabriel Lemos
+# Thiago Leão Carneiro
+# Vivianne Sophie Sousa Guimarães
+
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 

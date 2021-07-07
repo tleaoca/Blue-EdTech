@@ -7,7 +7,10 @@ body{
     background-size: 50%;
     margin: 0;
 }
-
+h5{
+    text-align: center;
+    font-size: 15px;
+}
 .header{
     padding-top: 20px;
 }
@@ -18,12 +21,37 @@ body{
     text-align: center;
 }
 
+
+
+.blocoIMG{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    padding-right: 30px;
+}
+
+.bloco1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.bloco1 h1{
+    color: white;
+    box-shadow: 5px;
+    border-top: 1px solid coral;
+    border-bottom: 1px solid coral;;
+    padding: 5px;
+}
+
 .bloco h1{
     color: white;
     box-shadow: 5px;
     border-top: 1px solid coral;
     border-bottom: 1px solid coral;;
-    padding: 10px;
+    padding: 5px;
 }
 
 .botao{
@@ -32,7 +60,7 @@ body{
     border-radius: 10px;
     color: white;
     display: inline-block;
-    padding: 20px;
+    padding: 10px;
     margin: 10px;
     font-size: 18px;
     text-align: center;
@@ -46,6 +74,7 @@ body{
     transition: 0.25s;
 }
 
+
 /*Estilização do CREATE*/
 
 
@@ -53,10 +82,13 @@ body{
     color: white;
 }
 
+.bloco1 h2,h3,h4{
+    color: white;
+}
+
 .form{
     width: 600px;
     color:rgb(170, 169, 169);
-
 }
 
 .form_input{
@@ -104,7 +136,7 @@ body{
     color: white;
     font-size: 20px;
     font-weight: bold;
-    padding: 5px 20px;
+    padding: 5px 5px;
 }
 
 /* Parte Adicionais */
@@ -115,9 +147,9 @@ body{
     text-align: center;
     align-items: center;
     border: 1px solid #FF7F50;
-    border-collapse: collapse;
     color: white;
-    background:linear-gradient(90deg, rgba(248,221,117,1) 0%, rgba(233,142,80,1) 50%, rgba(202,100,58,1) 100%);]  
+    background:linear-gradient(90deg, rgba(248,221,117,1) 0%, rgba(233,142,80,1) 50%, rgba(202,100,58,1) 100%);
+    font-size: 18px;  
 }
 
 .tabela td{
@@ -144,17 +176,16 @@ body::-webkit-scrollbar-track{
 }
 
 body::-webkit-scrollbar-thumb{
-  background: coral;
+  background:rgba(202,100,58,1);
 }
 
 footer{
-    background-color: coral;
     position: fixed;
+    background-color: coral;
     width: 100%;
     left: 0;
     bottom: 0;
     text-align: center;
-    padding: 5px;
     color: white;
     display: block;
     font-weight: bold;
@@ -166,7 +197,7 @@ footer{
     background-color: rgb(231, 182, 173);
     border-color:rgb(231, 182, 173);
     border-radius: 4px;
-    color: lightcoral;
+    color: black;
     margin: 0 50px;
 }
 
@@ -174,7 +205,7 @@ footer{
     background-color: #f8d7da;
     border-color: #f5c6cb;
     border-radius: 4px;
-    color: coral;
+    color: black;
     margin: 0 50px;
 }
 

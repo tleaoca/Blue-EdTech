@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon shortcut" href="https://image.flaticon.com/icons/png/512/4972/4972091.png">
     <link rel="stylesheet" href="/static/style.css">
-    <title>Blue Burguers - Create</title>
+    <title>Blue Burguers - Adicionar</title>
 </head>
 <body>
+
     {% include 'header.html' %}
+    {% if not novo_id %}
 
     <div class="bloco">
         <h2>Criar um novo produto</h2>
     </div>
-
-    {% if not novo_id %}
-
     <div class="bloco">
         <form class="form" method="POST">
             <fieldset>
@@ -45,12 +45,15 @@
     {% else %}
 
     <div class="bloco">
-        <p>
-            Produto registrado com sucesso! <br /><br />
-            <!-- O ID atribuído foi <span class="novo_id">{{ novo_id }}</span><br /><br /> -->
-            <a href="/read/{{ novo_id }}" class="botao">Visualizar esse registro</a>
-        </p>
+        <h2>Produto registrado com sucesso.</h2>
     </div>
+    <div class="bloco">
+        <h3>ID atribuído para o novo produto: {{ novo_id }}</h3>
+    </div>
+    <div class="bloco">
+        <a href="/read/{{ novo_id }}" class="botao">Visualizar esse registro</a>
+    </div>
+    
  
     {% endif %}
 

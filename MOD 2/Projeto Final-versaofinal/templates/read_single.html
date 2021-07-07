@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Burguers - Visualizar</title>
+    <link rel="icon shortcut" href="https://image.flaticon.com/icons/png/512/4972/4972091.png">
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    {% include 'header.html' %}
+
+<div class="blocoIMG">
+    <div class="blocoIMG">
+        <img src="{{ registro.imagem_url }}" alt="{{ registro.nome }}" width="200px" height="200px" id="imagemSingle" />
+    </div>
+    
+    <div class="bloco1">
+        <h2>Item: {{ registro.nome }}</h2>
+        <h3>Preço: R${{ registro.preco }}</h3> 
+        <h3>Descrição: {{ registro.ingredientes }}</h3> 
+    </div>
+</div>
+
+    <p><div class="bloco">
+        <a href="/read" class="botao">Voltar</a>
+        <a href="/update/{{ registro['id'] }}" class="botao">Editar item</a>
+        <a href="/delete/{{ registro['id'] }}" class="botao">Remover item</a>
+    </div></p>
+</body>
+
+<br><footer>
+    © Blueedtech - Turma2B
+</footer>
+</html>

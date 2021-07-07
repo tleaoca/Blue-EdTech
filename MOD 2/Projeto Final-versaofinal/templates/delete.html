@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blue Burguers</title>
+    <title>Blue Burguers - Deletar</title>
+    <link rel="icon shortcut" href="https://image.flaticon.com/icons/png/512/4972/4972091.png">
     <link rel="stylesheet" href="/static/style.css" />
 </head>
 <body>
@@ -17,7 +18,7 @@
             Registro removido com sucesso!
         </p>
     </div>
-
+    <br />
     <div class="bloco">
         <a href="/read" class="botao">Visualizar todos os registros</a>
     </div>
@@ -25,23 +26,21 @@
     {% elif registro %}
 
     <div class="bloco">
-        <h2> Remover registro <span class="novo_id">{{ registro.id }}</span> </h2>
+        <h2>Remover registro de ID {{ registro.id }} - {{ registro.nome }}.</span> </h2>
     </div>
-
     <div class="bloco">
-        <p class="certeza">
-            Tem certeza que deseja remover o registro <span class="novo_id">{{ registro.nome }}</span> ?
-            <br />
-            <a href="/delete/{{ registro.id }}/confirmed" class="botao">Remover</a>
-            <a href="/read" class="botao">Cancelar</a>
-        </p>
+        <h3>Tem certeza que deseja remover esse registro?</h3>
     </div>
+    <div class="bloco">
+        <a href="/delete/{{ registro.id }}/confirmed" class="botao">Remover</a>
+        <a href="/read" class="botao">Cancelar</a>
+    </div>       
 
     {% else %}
 
     <div class="bloco removido">
         <p>
-            NENHUM REGISTRO ENCONTRADO! <br /><br /> VALOR INVÁLIDO DE ID!
+            NENHUM REGISTRO ENCONTRADO! <br /><br /> ID INVÁLIDO!
         </p>
     </div>
 
