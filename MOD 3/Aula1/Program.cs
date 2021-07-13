@@ -69,3 +69,18 @@ do
     Console.WriteLine($"Número = {n2}");
     n2++;
 } while (n2 <= 5);
+
+// For
+
+for (int n3 = 0; n3 <= 7; n3++)
+{
+    Console.WriteLine(n3);
+}
+
+int[] arrayNumeros = { 3, 5, 7 };
+
+// Foreach
+foreach(int n in arrayNumeros)
+{
+    Console.WriteLine(n);
+}
