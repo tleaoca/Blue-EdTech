@@ -1,0 +1,15 @@
+C:\blue\MOD 3\Aula2\Ex3\Ex3\bin\Debug\net5.0\Ex3.exe
+C:\blue\MOD 3\Aula2\Ex3\Ex3\bin\Debug\net5.0\Ex3.deps.json
+C:\blue\MOD 3\Aula2\Ex3\Ex3\bin\Debug\net5.0\Ex3.runtimeconfig.json
+C:\blue\MOD 3\Aula2\Ex3\Ex3\bin\Debug\net5.0\Ex3.runtimeconfig.dev.json
+C:\blue\MOD 3\Aula2\Ex3\Ex3\bin\Debug\net5.0\Ex3.dll
+C:\blue\MOD 3\Aula2\Ex3\Ex3\bin\Debug\net5.0\ref\Ex3.dll
+C:\blue\MOD 3\Aula2\Ex3\Ex3\bin\Debug\net5.0\Ex3.pdb
+C:\blue\MOD 3\Aula2\Ex3\Ex3\obj\Debug\net5.0\Ex3.GeneratedMSBuildEditorConfig.editorconfig
+C:\blue\MOD 3\Aula2\Ex3\Ex3\obj\Debug\net5.0\Ex3.AssemblyInfoInputs.cache
+C:\blue\MOD 3\Aula2\Ex3\Ex3\obj\Debug\net5.0\Ex3.AssemblyInfo.cs
+C:\blue\MOD 3\Aula2\Ex3\Ex3\obj\Debug\net5.0\Ex3.csproj.CoreCompileInputs.cache
+C:\blue\MOD 3\Aula2\Ex3\Ex3\obj\Debug\net5.0\Ex3.dll
+C:\blue\MOD 3\Aula2\Ex3\Ex3\obj\Debug\net5.0\ref\Ex3.dll
+C:\blue\MOD 3\Aula2\Ex3\Ex3\obj\Debug\net5.0\Ex3.pdb
+C:\blue\MOD 3\Aula2\Ex3\Ex3\obj\Debug\net5.0\Ex3.genruntimeconfig.cache
