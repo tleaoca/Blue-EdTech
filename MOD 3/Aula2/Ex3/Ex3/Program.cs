@@ -17,7 +17,8 @@ for (int i = 0; i <= array.Length; i++)
     {
         Console.WriteLine("Você atingiu a quantidade máximo de números.");
         Array.Sort(array);
-        foreach (int n in array) Console.WriteLine(n);       
+        //foreach (int n in array) Console.WriteLine(n);
+        Console.WriteLine("[{0}], {1}", string.Join(", ", array), "é a lista ordenada.");
         Console.Read();
     }
 }

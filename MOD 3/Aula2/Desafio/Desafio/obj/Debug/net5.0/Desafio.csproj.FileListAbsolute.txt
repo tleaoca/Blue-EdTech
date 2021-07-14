@@ -1,0 +1,16 @@
+C:\blue\MOD 3\Aula2\Desafio\Desafio\bin\Debug\net5.0\Desafio.exe
+C:\blue\MOD 3\Aula2\Desafio\Desafio\bin\Debug\net5.0\Desafio.deps.json
+C:\blue\MOD 3\Aula2\Desafio\Desafio\bin\Debug\net5.0\Desafio.runtimeconfig.json
+C:\blue\MOD 3\Aula2\Desafio\Desafio\bin\Debug\net5.0\Desafio.runtimeconfig.dev.json
+C:\blue\MOD 3\Aula2\Desafio\Desafio\bin\Debug\net5.0\Desafio.dll
+C:\blue\MOD 3\Aula2\Desafio\Desafio\bin\Debug\net5.0\ref\Desafio.dll
+C:\blue\MOD 3\Aula2\Desafio\Desafio\bin\Debug\net5.0\Desafio.pdb
+C:\blue\MOD 3\Aula2\Desafio\Desafio\obj\Debug\net5.0\Desafio.GeneratedMSBuildEditorConfig.editorconfig
+C:\blue\MOD 3\Aula2\Desafio\Desafio\obj\Debug\net5.0\Desafio.AssemblyInfoInputs.cache
+C:\blue\MOD 3\Aula2\Desafio\Desafio\obj\Debug\net5.0\Desafio.AssemblyInfo.cs
+C:\blue\MOD 3\Aula2\Desafio\Desafio\obj\Debug\net5.0\Desafio.csproj.CoreCompileInputs.cache
+C:\blue\MOD 3\Aula2\Desafio\Desafio\obj\Debug\net5.0\Desafio.dll
+C:\blue\MOD 3\Aula2\Desafio\Desafio\obj\Debug\net5.0\ref\Desafio.dll
+C:\blue\MOD 3\Aula2\Desafio\Desafio\obj\Debug\net5.0\Desafio.pdb
+C:\blue\MOD 3\Aula2\Desafio\Desafio\obj\Debug\net5.0\Desafio.genruntimeconfig.cache
+C:\blue\MOD 3\Aula2\Desafio\Desafio\obj\Debug\net5.0\Desafio.csproj.AssemblyReference.cache
