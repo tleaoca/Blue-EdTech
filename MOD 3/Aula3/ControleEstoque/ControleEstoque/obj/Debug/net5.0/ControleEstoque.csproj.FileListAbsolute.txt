@@ -1,0 +1,16 @@
+C:\blue\MOD 3\Aula3\ControleEstoque\ControleEstoque\bin\Debug\net5.0\ControleEstoque.exe
+C:\blue\MOD 3\Aula3\ControleEstoque\ControleEstoque\bin\Debug\net5.0\ControleEstoque.deps.json
+C:\blue\MOD 3\Aula3\ControleEstoque\ControleEstoque\bin\Debug\net5.0\ControleEstoque.runtimeconfig.json
+C:\blue\MOD 3\Aula3\ControleEstoque\ControleEstoque\bin\Debug\net5.0\ControleEstoque.runtimeconfig.dev.json
+C:\blue\MOD 3\Aula3\ControleEstoque\ControleEstoque\bin\Debug\net5.0\ControleEstoque.dll
+C:\blue\MOD 3\Aula3\ControleEstoque\ControleEstoque\bin\Debug\net5.0\ref\ControleEstoque.dll
+C:\blue\MOD 3\Aula3\ControleEstoque\ControleEstoque\bin\Debug\net5.0\ControleEstoque.pdb
+C:\blue\MOD 3\Aula3\ControleEstoque\ControleEstoque\obj\Debug\net5.0\ControleEstoque.csproj.AssemblyReference.cache
+C:\blue\MOD 3\Aula3\ControleEstoque\ControleEstoque\obj\Debug\net5.0\ControleEstoque.GeneratedMSBuildEditorConfig.editorconfig
+C:\blue\MOD 3\Aula3\ControleEstoque\ControleEstoque\obj\Debug\net5.0\ControleEstoque.AssemblyInfoInputs.cache
+C:\blue\MOD 3\Aula3\ControleEstoque\ControleEstoque\obj\Debug\net5.0\ControleEstoque.AssemblyInfo.cs
+C:\blue\MOD 3\Aula3\ControleEstoque\ControleEstoque\obj\Debug\net5.0\ControleEstoque.csproj.CoreCompileInputs.cache
+C:\blue\MOD 3\Aula3\ControleEstoque\ControleEstoque\obj\Debug\net5.0\ControleEstoque.dll
+C:\blue\MOD 3\Aula3\ControleEstoque\ControleEstoque\obj\Debug\net5.0\ref\ControleEstoque.dll
+C:\blue\MOD 3\Aula3\ControleEstoque\ControleEstoque\obj\Debug\net5.0\ControleEstoque.pdb
+C:\blue\MOD 3\Aula3\ControleEstoque\ControleEstoque\obj\Debug\net5.0\ControleEstoque.genruntimeconfig.cache

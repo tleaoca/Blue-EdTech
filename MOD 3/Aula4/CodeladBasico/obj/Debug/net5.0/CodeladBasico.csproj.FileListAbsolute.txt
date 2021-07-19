@@ -1,0 +1,16 @@
+C:\blue\MOD 3\Aula4\CodeladBasico\obj\Debug\net5.0\CodeladBasico.csproj.AssemblyReference.cache
+C:\blue\MOD 3\Aula4\CodeladBasico\obj\Debug\net5.0\CodeladBasico.GeneratedMSBuildEditorConfig.editorconfig
+C:\blue\MOD 3\Aula4\CodeladBasico\obj\Debug\net5.0\CodeladBasico.AssemblyInfoInputs.cache
+C:\blue\MOD 3\Aula4\CodeladBasico\obj\Debug\net5.0\CodeladBasico.AssemblyInfo.cs
+C:\blue\MOD 3\Aula4\CodeladBasico\obj\Debug\net5.0\CodeladBasico.csproj.CoreCompileInputs.cache
+C:\blue\MOD 3\Aula4\CodeladBasico\bin\Debug\net5.0\CodeladBasico.exe
+C:\blue\MOD 3\Aula4\CodeladBasico\bin\Debug\net5.0\CodeladBasico.deps.json
+C:\blue\MOD 3\Aula4\CodeladBasico\bin\Debug\net5.0\CodeladBasico.runtimeconfig.json
+C:\blue\MOD 3\Aula4\CodeladBasico\bin\Debug\net5.0\CodeladBasico.runtimeconfig.dev.json
+C:\blue\MOD 3\Aula4\CodeladBasico\bin\Debug\net5.0\CodeladBasico.dll
+C:\blue\MOD 3\Aula4\CodeladBasico\bin\Debug\net5.0\ref\CodeladBasico.dll
+C:\blue\MOD 3\Aula4\CodeladBasico\bin\Debug\net5.0\CodeladBasico.pdb
+C:\blue\MOD 3\Aula4\CodeladBasico\obj\Debug\net5.0\CodeladBasico.dll
+C:\blue\MOD 3\Aula4\CodeladBasico\obj\Debug\net5.0\ref\CodeladBasico.dll
+C:\blue\MOD 3\Aula4\CodeladBasico\obj\Debug\net5.0\CodeladBasico.pdb
+C:\blue\MOD 3\Aula4\CodeladBasico\obj\Debug\net5.0\CodeladBasico.genruntimeconfig.cache
