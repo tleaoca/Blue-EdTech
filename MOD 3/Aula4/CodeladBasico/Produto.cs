@@ -12,5 +12,7 @@ namespace CodeladBasico
         public double Preco { get; set; }
         public int Quantidade { get; set; }
         public string Descricao { get => $"Nome: {Nome} - Preço R${Preco:0.00} - Quantidade: {Quantidade}"; }
+
+        
     }
 }

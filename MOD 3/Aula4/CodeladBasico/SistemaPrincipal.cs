@@ -9,6 +9,7 @@ namespace CodeladBasico
     public class SistemaPrincipal
     {
         List<Produto> produtos = new List<Produto>();
+        Produto prod = new Produto();
         public void Menu()
         {
             Console.WriteLine("Menu de opções:");
@@ -40,8 +41,7 @@ namespace CodeladBasico
             Menu();
         }
         void CadastrarProduto()
-        {
-            Produto prod = new Produto();
+        {            
             Console.WriteLine("Nome do produto: ");
             prod.Nome = Console.ReadLine();
             Console.WriteLine("Preço do produto: ");
@@ -62,8 +62,7 @@ namespace CodeladBasico
 
         void SomaValorEstoque()
         {
-            Produto prod = new Produto();
-            double total = prod.Preco.Sum(x => Convert.ToInt32(x.Preco));
+            Console.WriteLine("Somando valores...");            
         }
 
     }
