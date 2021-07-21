@@ -1,0 +1,26 @@
+﻿@page
+@using SalaDeAula.Models;
+@model SalaDeAula.Pages.Alunos.IndexModel
+@{
+}
+
+<p><a asp-page="/Alunos/Create">Novo Aluno.</a></p>
+
+<div class="row">
+    @foreach (Aluno x in Model.listaAlunos)
+    {
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                    @x.Nome
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">ID: @x.Id</li>
+                    <li class="list-group-item">Data Nascimento: @x.Nascimento.ToString("dd/MM/yyyy")</li>
+                    <li class="list-group-item">Idade: @x.Idade anos  </li>
+                </ul>
+            </div>
+        </div>
+    }
+</div>
+

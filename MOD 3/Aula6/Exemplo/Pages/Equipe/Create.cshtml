@@ -1,0 +1,26 @@
+﻿@page
+@model Exemplo.Pages.Equipe.CreateModel
+@{
+}
+<p>Página criação</p>
+
+<form>
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome da Equipe</label>
+        <input type="text" class="form-control" id="nome" />
+    </div>
+    <div class="mb-3">
+        <label for="cor" class="form-label">Cor da Equipe</label>
+        <input type="text" class="form-control" id="cor" />
+    </div>
+    <div class="mb-3">
+        <label for="titulos" class="form-label">Títulos da Equipe</label>
+        <input type="text" class="form-control" id="titulos" />
+    </div>
+    <div class="mb-3">
+        <label for="url" class="form-label">URL do Escudo</label>
+        <input type="text" class="form-control" id="url" />
+    </div>
+    <a class="btn btn-info" asp-page="/Equipe/Sucesso">Criar</a>
+    <a class="btn btn-link" asp-page="/Equipe/Index">Voltar</a>
+</form>

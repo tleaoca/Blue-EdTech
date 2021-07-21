@@ -1,0 +1,26 @@
+﻿@page
+@using Exemplo.Models;
+@model Exemplo.Pages.Equipe.IndexModel
+@{
+}
+
+<h1>Página inicial dos times</h1>
+
+<p><a asp-page="/Equipe/Create">Nova Equipe.</a></p>
+<div class="row">
+    @foreach (Equipe x in Model.equipe)
+    {
+    <div class="col">
+        <div class="card" style="width: 150px;">
+            <img src="@x.Url" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">@x.Nome</h5>
+                <p class="card-text">@x.Cor</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Títulos: @x.Titulos</li>
+            </ul>
+        </div>
+    </div>
+    }
+</div>
