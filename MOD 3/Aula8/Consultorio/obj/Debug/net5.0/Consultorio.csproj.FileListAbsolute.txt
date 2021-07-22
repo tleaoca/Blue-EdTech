@@ -356,3 +356,4 @@ C:\blue\MOD 3\Aula8\Consultorio\obj\Debug\net5.0\Consultorio.dll
 C:\blue\MOD 3\Aula8\Consultorio\obj\Debug\net5.0\ref\Consultorio.dll
 C:\blue\MOD 3\Aula8\Consultorio\obj\Debug\net5.0\Consultorio.pdb
 C:\blue\MOD 3\Aula8\Consultorio\obj\Debug\net5.0\Consultorio.genruntimeconfig.cache
+C:\blue\MOD 3\Aula8\Consultorio\obj\Debug\net5.0\Razor\Views\Paciente\Index.cshtml.g.cs
