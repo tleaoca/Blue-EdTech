@@ -1,5 +1,5 @@
 ﻿@model List<Filme>
-@using LocadoraDeFilmes.Controllers
+@using LocadoraDeFilmes.Models
 
 <a class="btn btn-outline-dark" asp-controller="Filme" asp-action="Create">Criar um novo Filme</a>
 <br />
@@ -12,6 +12,12 @@
     <input width="100" class="btn btn-outline-dark" type="submit" value="Procurar" />
 </form>
 <br />
+
+@if (Model.Count() > 10)
+{
+    <center><h2>Filme cadastrado com sucesso.</h2></center>
+    <br />
+}
 
 <table class="table">
     <thead>
@@ -31,7 +37,7 @@
                 <td>@Html.DisplayFor(Model => f.Lancamento)</td>
                 <td>@Html.DisplayFor(Model => f.Duracao)</td>
             </tr>
-            
+
         }
     </tbody>
 </table>
@@ -44,6 +50,6 @@
         <li class="list-group-item">Quantidade de filmes: @Model.Count()</li>
         <li class="list-group-item">Duração total de todos os filmes: </li>
         <li class="list-group-item">Nome do filme com lançamento mais recente: </li>
-        <li class="list-group-item">Nome do filme mais caro:  teste </li>
+        <li class="list-group-item">Nome do filme mais caro: </li>
     </ul>
 </div>

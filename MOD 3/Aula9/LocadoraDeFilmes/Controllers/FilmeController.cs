@@ -11,10 +11,11 @@ namespace LocadoraDeFilmes.Controllers
     {
         List<Filme> filmes = new List<Filme>();
 
-        int teste = 0;
+        
         
         public IActionResult Index()
-        {          
+        {   
+            
             return View(getFilmes());
         }
 
@@ -36,9 +37,9 @@ namespace LocadoraDeFilmes.Controllers
         public IActionResult Create(Filme filme)
         {
             filmes = getFilmes();            
-            filme.Id = filmes.Count() + 1;
+            filme.Id = filmes.Max(p => p.Id) + 1;          
             filmes.Add(filme);
-            return View("Sucesso", filmes);
+            return View("Index", filmes);
         }
 
         List<Filme> getFilmes()

@@ -357,5 +357,4 @@ C:\blue\MOD 3\Aula9\LocadoraDeFilmes\obj\Debug\net5.0\ref\LocadoraDeFilmes.dll
 C:\blue\MOD 3\Aula9\LocadoraDeFilmes\obj\Debug\net5.0\LocadoraDeFilmes.pdb
 C:\blue\MOD 3\Aula9\LocadoraDeFilmes\obj\Debug\net5.0\LocadoraDeFilmes.genruntimeconfig.cache
 C:\blue\MOD 3\Aula9\LocadoraDeFilmes\obj\Debug\net5.0\Razor\Views\Filme\Create.cshtml.g.cs
-C:\blue\MOD 3\Aula9\LocadoraDeFilmes\obj\Debug\net5.0\Razor\Views\Filme\Sucesso.cshtml.g.cs
 C:\blue\MOD 3\Aula9\LocadoraDeFilmes\obj\Debug\net5.0\Razor\Views\Filme\Buscar.cshtml.g.cs
