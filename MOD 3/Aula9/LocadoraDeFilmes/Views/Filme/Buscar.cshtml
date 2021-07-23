@@ -1,0 +1,40 @@
+﻿@model List<Filme>
+
+
+<a class="btn btn-outline-dark" asp-controller="Filme" asp-action="Create">Criar um novo Filme</a>
+<br />
+<br />
+<h1>Lista de Filmes</h1>
+<br />
+
+<form asp-controller="Filme" asp-action="Buscar">
+    <input type="text" name="id" />
+    <input width="100" class="btn btn-outline-dark" type="submit" value="Procurar" />
+</form>
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Id)</th>
+            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Nome)</th>
+            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Lancamento)</th>
+            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Duracao)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Filme f in Model)
+        {
+            <tr>
+                <th scope="row">@Html.DisplayFor(Model => f.Id)</th>
+                <td>@Html.DisplayFor(Model => f.Nome)</td>
+                <td>@Html.DisplayFor(Model => f.Lancamento)</td>
+                <td>@Html.DisplayFor(Model => f.Duracao)</td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-outline-dark" asp-controller="Filme" asp-action="Index">Voltar</a>
+

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1e4rYDkFL/9i1Kxd+nUxuo+YUrZYsmTjZdym4m31Mrq0P9e4d3rZYssPvYpofOvnk0FqBpi3KZnn2BGo0+jBIQ==",
+  "dgSpecHash": "53jfUQWt4t3h0f006Apfjx3KDR6/WwnRgBdybPLqjryetMsZwKWO4bIQy1LLoU27/vbdDU7GvfjUDtPQ1uscOQ==",
   "success": true,
-  "projectFilePath": "C:\\blue\\MOD 3\\Aula8\\Consultorio\\Consultorio.csproj",
+  "projectFilePath": "C:\\blue\\MOD 3\\Aula8-10\\Consultorio\\Consultorio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Thiago\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\5.0.8\\microsoft.aspnetcore.mvc.razor.extensions.5.0.8.nupkg.sha512",
     "C:\\Users\\Thiago\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\5.0.8\\microsoft.aspnetcore.mvc.razor.runtimecompilation.5.0.8.nupkg.sha512",

@@ -741,11 +741,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\blue\\MOD 3\\Aula8\\Consultorio\\Consultorio.csproj",
+      "projectUniqueName": "C:\\blue\\MOD 3\\Aula8-10\\Consultorio\\Consultorio.csproj",
       "projectName": "Consultorio",
-      "projectPath": "C:\\blue\\MOD 3\\Aula8\\Consultorio\\Consultorio.csproj",
+      "projectPath": "C:\\blue\\MOD 3\\Aula8-10\\Consultorio\\Consultorio.csproj",
       "packagesPath": "C:\\Users\\Thiago\\.nuget\\packages\\",
-      "outputPath": "C:\\blue\\MOD 3\\Aula8\\Consultorio\\obj\\",
+      "outputPath": "C:\\blue\\MOD 3\\Aula8-10\\Consultorio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Thiago\\AppData\\Roaming\\NuGet\\NuGet.Config",

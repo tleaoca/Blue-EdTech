@@ -1,0 +1,28 @@
+﻿@model Filme
+
+<form asp-action="Create">
+    <div class="mb-3">
+        <label asp-for="Nome" class="form-label"></label>
+        <input asp-for="Nome" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Sinopse" class="form-label"></label>
+        <input asp-for="Sinopse" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Preco" class="form-label"></label>
+        <input asp-for="Preco" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Lancamento" class="form-label"></label>
+        <input asp-for="Lancamento" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Duracao" class="form-label"></label>
+        <input asp-for="Duracao" class="form-control" />
+    </div>
+    <input class="btn btn-outline-dark" type="submit" value="Criar" />
+    <a class="btn btn-outline-dark" asp-controller="Filme" asp-action="Index">Voltar</a>
+</form>
+
+

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocadoraDeFilmes", "LocadoraDeFilmes.csproj", "{4179BE26-85FD-4A42-BAC9-1624EA5C0F69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4179BE26-85FD-4A42-BAC9-1624EA5C0F69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4179BE26-85FD-4A42-BAC9-1624EA5C0F69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4179BE26-85FD-4A42-BAC9-1624EA5C0F69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4179BE26-85FD-4A42-BAC9-1624EA5C0F69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FDE8CCEB-7B3F-4404-AA20-C46BAF2272AA}
+	EndGlobalSection
+EndGlobal
