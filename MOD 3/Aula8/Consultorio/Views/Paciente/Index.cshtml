@@ -1,12 +1,28 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-@foreach (Paciente p in ViewBag.pacientes)
-{
-    <p>@p.Nome</p>
-    <p>@p.Id</p>
-    <p>@p.Nascimento.ToString("dd/MM/yyyy")</p>
-    <hr />
-}
+﻿@model List<Paciente>
+
+<a class="btn btn-outline-dark" asp-controller="Paciente" asp-action="Create">Criar um novo paciente</a>
+<br />
+<br />
+<h1>Lista de Pacientes</h1>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Id)</th>
+            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Nome)</th>
+            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Nascimento)</th>
+            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Descricao)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Paciente p in Model)
+        {
+            <tr>
+                <th scope="row">@Html.DisplayFor(Model => p.Id)</th>
+                <td>@Html.DisplayFor(Model => p.Nome)</td>
+                <td>@Html.DisplayFor(Model => p.Nascimento)</td>
+                <td>@Html.DisplayFor(Model => p.Descricao)</td>
+            </tr>
+        }
+    </tbody>
+</table>

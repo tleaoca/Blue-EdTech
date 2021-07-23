@@ -1,0 +1,20 @@
+﻿@model Paciente
+
+<form asp-action="Create">
+    <div class="mb-3">
+        <label asp-for="Nome" class="form-label"></label>
+        <input asp-for="Nome" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Nascimento" class="form-label"></label>
+        <input asp-for="Nascimento" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Descricao" class="form-label"></label>
+        <input asp-for="Descricao" class="form-control" />
+    </div>
+    <input class="btn btn-outline-dark" type="submit" value="Criar" />
+    <a class="btn btn-outline-dark" asp-controller="Paciente" asp-action="Index">Voltar</a>
+</form>
+
+
