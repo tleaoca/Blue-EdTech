@@ -1,0 +1,56 @@
+﻿@model List<Remedio>
+<a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Create">Criar um novo Remédio</a>
+<br />
+<br />
+<h1>Remédios em Estoque</h1>
+<br />
+
+<form asp-controller="Remedio" asp-action="Buscar">
+    <input type="text" name="id" />
+    <input width="100" class="btn btn-outline-dark" type="submit" value="Procurar" />
+</form>
+<br />
+
+@if (Model.Count() > 10)
+{
+    <center><h2>Remédio cadastrado com sucesso.</h2></center>
+    <br />
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Id)</th>
+            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Nome)</th>
+            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Fabricante)</th>
+            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Quantidade)</th>
+            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Preco)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Remedio r in Model)
+        {
+            <tr>
+                <th scope="row">@Html.DisplayFor(Model => r.Id)</th>
+                <td>@Html.DisplayFor(Model => r.Nome)</td>
+                <td>@Html.DisplayFor(Model => r.Fabricante)</td>
+                <td>@Html.DisplayFor(Model => r.Quantidade) Unidades</td>
+                <td>R$@Html.DisplayFor(Model => r.Preco)</td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+        Informações gerais:
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Total de itens: @Model.Count()</li>
+        <li class="list-group-item">Item mais caro: valor e nome </li>
+        <li class="list-group-item">Item fora da validade: nome do item</li>
+        <li class="list-group-item">Item com maior quantidade em estoque: @ViewBag.x </li>
+    </ul>
+</div>

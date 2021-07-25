@@ -10,15 +10,28 @@ namespace LocadoraDeFilmes.Controllers
     public class FilmeController : Controller
     {
         List<Filme> filmes = new List<Filme>();
+        
 
-        
-        
         public IActionResult Index()
-        {   
-            
+        {                        
             return View(getFilmes());
         }
 
+        public string MaisRecente()
+        {
+            filmes = getFilmes();
+            DateTime recenteLancamento = new DateTime(0000, 00, 00);
+            var nomeRecenteLancamento = "a";
+            foreach (Filme f in filmes)
+            {                
+                if (f.Lancamento > recenteLancamento)
+                {                    
+                    nomeRecenteLancamento = f.Nome;
+                    
+                }                
+            }
+            return nomeRecenteLancamento;
+        }
 
 
         [HttpPost]
