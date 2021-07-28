@@ -13,12 +13,14 @@ namespace Farmacia.Models
 
         public string Nome { get; set; }
         public string Fabricante { get; set; }
-        public int Quantidade { get; set; }
+        public int? Quantidade { get; set; }
 
         [Display(Name = "Preço")]
         public decimal Preco { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime Validade { get; set; }
+        public DateTime? Validade { get; set; }
+
+   
     }
 }

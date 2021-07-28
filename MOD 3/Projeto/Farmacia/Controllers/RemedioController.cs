@@ -11,23 +11,31 @@ namespace Farmacia.Controllers
     {
         List<Remedio> remedios = new List<Remedio>();
         
-        public IActionResult Index()
+        public IActionResult Index(string id)
         {
             ViewBag.x = maiorQtd();
-            return View(getRemedios());
+            return View(id == null ? getRemedios() : getRemedios().FindAll(x => x.Nome.ToLower().Contains(id.ToLower())));
         }
 
         public List<Remedio> getRemedios()
         {
             remedios.Add(new Remedio { Id = 1, Nome = "Rivotril", Fabricante = "Blabla", Quantidade = 15, Preco = 30, Validade = new DateTime(2000, 10, 20) });
-            remedios.Add(new Remedio { Id = 1, Nome = "Omeprazol", Fabricante = "Blabla", Quantidade = 12, Preco = 30, Validade = new DateTime(2000, 10, 20) });
-            remedios.Add(new Remedio { Id = 1, Nome = "Viagra", Fabricante = "Blabla", Quantidade = 11, Preco = 30, Validade = new DateTime(2000, 10, 20) });
+            remedios.Add(new Remedio { Id = 2, Nome = "Omeprazol", Fabricante = "Blabla", Quantidade = 12, Preco = 30, Validade = new DateTime(2000, 10, 20) });
+            remedios.Add(new Remedio { Id = 3, Nome = "Viagra", Fabricante = "Blabla", Quantidade = 11, Preco = 30, Validade = new DateTime(2000, 10, 20) });
+            remedios.Add(new Remedio { Id = 4, Nome = "Viagra", Fabricante = "Blabla", Quantidade = 1, Preco = 30, Validade = new DateTime(2000, 10, 20) });
+            remedios.Add(new Remedio { Id = 5, Nome = "Viagra", Fabricante = "Blabla", Quantidade = 13, Preco = 30, Validade = new DateTime(2000, 10, 20) });
+            remedios.Add(new Remedio { Id = 6, Nome = "Viagra", Fabricante = "Blabla", Quantidade = 16, Preco = 30, Validade = new DateTime(2000, 10, 20) });
+            remedios.Add(new Remedio { Id = 7, Nome = "Viagra", Fabricante = "Blabla", Quantidade = 17, Preco = 30, Validade = new DateTime(2000, 10, 20) });
+            remedios.Add(new Remedio { Id = 8, Nome = "Viagra", Fabricante = "Blabla", Quantidade = 19, Preco = 30, Validade = new DateTime(2000, 10, 20) });
+            remedios.Add(new Remedio { Id = 9, Nome = "Viagra", Fabricante = "Blabla", Quantidade = 8, Preco = 30, Validade = new DateTime(2000, 10, 20) });
+            remedios.Add(new Remedio { Id = 10, Nome = "Viagra", Fabricante = "Blabla", Quantidade = 6, Preco = 30, Validade = new DateTime(2000, 10, 20) });
             return remedios;
         }
 
-        public int maiorQtd()
+        public int? maiorQtd()
         {
-            int maiorQ = 0;
+            List<Remedio> remedios = getRemedios();
+            int? maiorQ = 0;
             foreach (Remedio r in remedios)
             {
 
@@ -39,10 +47,42 @@ namespace Farmacia.Controllers
             return maiorQ;
         }
 
-        [HttpPost]
-        public IActionResult Buscar(string id)
+        
+        public IActionResult Read(int? id)
         {
-            return View(id == null ? getRemedios() : getRemedios().FindAll(x => x.Nome.ToLower() == id));
+            Remedio remedio = getRemedios().FirstOrDefault(r => r.Id == id);
+            return remedio != null ? View(remedio) : RedirectToAction(nameof(Index));
+        }
+        public IActionResult Delete(int? id)
+        {
+            List<Remedio> listaRemedios = getRemedios();
+            Remedio remedio = listaRemedios.FirstOrDefault(r => r.Id == id);
+
+            if (remedio != null)
+            {
+                listaRemedios.Remove(remedio);
+                return View(nameof(Index), listaRemedios);
+            }
+            return NotFound();            
+        }
+
+        public IActionResult Update(int? id)
+        {
+            Remedio remedio = getRemedios().FirstOrDefault(r => r.Id == id);
+            return View(remedio);
+        }
+
+        [HttpPost]
+        public IActionResult Update(Remedio rAtualizado)
+        {
+            List<Remedio> listaRemedios = getRemedios();
+            Remedio remedioExistente = listaRemedios.FirstOrDefault(r => r.Id == rAtualizado.Id);
+            if (rAtualizado == null) return RedirectToAction(nameof(Index));
+
+            var indice = listaRemedios.IndexOf(remedioExistente);
+            listaRemedios[indice] = rAtualizado;
+
+            return View(nameof(Index), listaRemedios);
         }
 
         [HttpGet]
@@ -57,7 +97,7 @@ namespace Farmacia.Controllers
             remedios = getRemedios();
             remedio.Id = remedios.Max(r => r.Id) + 1;
             remedios.Add(remedio);
-            return View("Index", remedios);
+            return View(nameof(Index), remedios);
         }
     }
 }

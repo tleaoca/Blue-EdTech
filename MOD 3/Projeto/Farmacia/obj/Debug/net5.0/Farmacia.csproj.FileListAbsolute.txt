@@ -356,4 +356,5 @@ C:\blue\MOD 3\Projeto\Farmacia\obj\Debug\net5.0\ref\Farmacia.dll
 C:\blue\MOD 3\Projeto\Farmacia\obj\Debug\net5.0\Farmacia.pdb
 C:\blue\MOD 3\Projeto\Farmacia\obj\Debug\net5.0\Farmacia.genruntimeconfig.cache
 C:\blue\MOD 3\Projeto\Farmacia\obj\Debug\net5.0\Razor\Views\Remedio\Create.cshtml.g.cs
-C:\blue\MOD 3\Projeto\Farmacia\obj\Debug\net5.0\Razor\Views\Remedio\Buscar.cshtml.g.cs
+C:\blue\MOD 3\Projeto\Farmacia\obj\Debug\net5.0\Razor\Views\Remedio\Read.cshtml.g.cs
+C:\blue\MOD 3\Projeto\Farmacia\obj\Debug\net5.0\Razor\Views\Remedio\Update.cshtml.g.cs

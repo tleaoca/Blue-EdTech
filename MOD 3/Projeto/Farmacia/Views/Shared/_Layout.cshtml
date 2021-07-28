@@ -14,7 +14,7 @@
 
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Farmácia BlueEdtech</a>                
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">Farmácia BlueEdtech</a>                
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
@@ -26,7 +26,7 @@
                     </ul>
                 </div>
                     <div class="navbar">
-                        <form class="d-flex" asp-controller="Remedio" asp-action="Buscar">
+                        <form class="d-flex" asp-controller="Remedio" asp-action="Index">
                             <input type="text" name="id" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <input width="100" class="btn btn-outline-light" type="submit" value="Procurar" />
                         </form>
