@@ -4,19 +4,18 @@
 <br />
 <br />
 
-<h1>Remédio de registro @Html.DisplayFor(Model => Model.Id)</h1>
+<center><h1>Remédio de registro @Model.Id</h1></center>
+<br />
+<dl class="row">
+    <dt class="col-sm-3">@Html.DisplayNameFor(Model => Model.Id)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(Model => Model.Id)</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(Model => Model.Nome)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(Model => Model.Nome)</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(Model => Model.Fabricante)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(Model => Model.Fabricante)</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(Model => Model.Preco)</dt>
+    <dd class="col-sm-9">R$@Html.DisplayFor(Model => Model.Preco)</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(Model => Model.Quantidade)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(Model => Model.Quantidade) Unidades</dd>
+</dl>
 
-@Html.DisplayNameFor(Model => Model.Id)
-@Html.DisplayFor(Model => Model.Id)
-
-@Html.DisplayNameFor(Model => Model.Nome)
-@Html.DisplayFor(Model => Model.Nome)
-
-@Html.DisplayNameFor(Model => Model.Fabricante)
-@Html.DisplayFor(Model => Model.Fabricante)
-
-@Html.DisplayNameFor(Model => Model.Preco)
-@Html.DisplayFor(Model => Model.Preco)
-
-@Html.DisplayNameFor(Model => Model.Quantidade)
-@Html.DisplayFor(Model => Model.Quantidade)

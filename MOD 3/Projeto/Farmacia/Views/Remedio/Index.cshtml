@@ -44,7 +44,6 @@
                         <a asp-controller="Remedio" asp-action="Delete" asp-route-id="@r.Id">Deletar</a>
                     </td>
                 </tr>
-
             }
         </tbody>
     </table>
@@ -57,7 +56,7 @@
             <li class="list-group-item">Total de itens: @Model.Count()</li>
             <li class="list-group-item">Item mais caro: valor e nome </li>
             <li class="list-group-item">Item fora da validade: nome do item</li>
-            <li class="list-group-item">Item com maior quantidade em estoque: @ViewBag.x </li>
+            <li class="list-group-item">Item com maior quantidade em estoque: @ViewBag.y @ViewBag.x </li>
         </ul>
     </div>
 

@@ -13,9 +13,12 @@ namespace Farmacia.Controllers
         
         public IActionResult Index(string id)
         {
-            ViewBag.x = maiorQtd();
+            //ViewBag.x = maiorQtd();
+            //ViewBag.y = maiorQtdNome();
             return View(id == null ? getRemedios() : getRemedios().FindAll(x => x.Nome.ToLower().Contains(id.ToLower())));
         }
+
+
 
         public List<Remedio> getRemedios()
         {
@@ -35,16 +38,33 @@ namespace Farmacia.Controllers
         public int? maiorQtd()
         {
             List<Remedio> remedios = getRemedios();
+            int? maiorQ = 0;            
+            foreach (Remedio r in remedios)
+            {
+
+                if (r.Quantidade > maiorQ)
+                {
+                    maiorQ = r.Quantidade;
+                    
+                }
+            }
+            return maiorQ;
+        }
+
+        public string maiorQtdNome()
+        {
+            List<Remedio> remedios = getRemedios();
             int? maiorQ = 0;
+            string nomeFilmeMaiorQ = "";
             foreach (Remedio r in remedios)
             {
 
                 if(r.Quantidade > maiorQ)
-                {
-                    maiorQ = r.Quantidade;
+                {                    
+                    nomeFilmeMaiorQ = r.Nome;
                 }
             }
-            return maiorQ;
+            return nomeFilmeMaiorQ;
         }
 
         
@@ -58,16 +78,28 @@ namespace Farmacia.Controllers
             List<Remedio> listaRemedios = getRemedios();
             Remedio remedio = listaRemedios.FirstOrDefault(r => r.Id == id);
 
-            if (remedio != null)
+            if (remedio == null)
             {
-                listaRemedios.Remove(remedio);
-                return View(nameof(Index), listaRemedios);
+                return NotFound();
             }
-            return NotFound();            
+            return View(remedio);            
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult ConfirmarDelete(int? id)
+        {
+            List<Remedio> listaRemedios = getRemedios();
+            Remedio remedio = listaRemedios.FirstOrDefault(r => r.Id == id);
+
+            listaRemedios.Remove(remedio);
+
+            return View(nameof(Index), listaRemedios);           
         }
 
         public IActionResult Update(int? id)
         {
+            //ViewBag.x = maiorQtd();
+            //ViewBag.y = maiorQtdNome();
             Remedio remedio = getRemedios().FirstOrDefault(r => r.Id == id);
             return View(remedio);
         }

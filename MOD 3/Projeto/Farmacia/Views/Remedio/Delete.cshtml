@@ -1,0 +1,12 @@
+﻿@model Remedio
+<br />
+<br />
+<br />
+<br />
+
+<h1>Deletar remédio @Model.Nome de ID @Model.Id ?</h1>
+
+<form asp-action="Delete">
+    <input class="btn btn-outline-dark" type="submit" value="Confirmar" />
+    <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Index">Voltar</a>
+</form>
