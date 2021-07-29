@@ -8,6 +8,7 @@ namespace Farmacia.Models
 {
     public class Remedio
     {
+        
         [Display(Name = "#")]
         public int Id { get; set; }
 

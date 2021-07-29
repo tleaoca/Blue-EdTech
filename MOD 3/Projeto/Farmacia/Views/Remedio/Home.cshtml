@@ -1,0 +1,55 @@
+﻿@model List<Remedio>
+
+<br />
+<br />
+<br />
+<br />
+<div class="text-center">
+    <h1>Bem vindo ao sistema da Farmácia Blue.</h1>
+    <br />
+    <h4>Atualmente existem @Model.Count() itens cadastrados.</h4>
+    <br />
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Item mais caro do estoque</h5>
+                <p class="card-text">Nome: @ViewBag.NomeMaiorV</p>
+                <p class="card-text">Valor: R$@Model.Max(Model => Model.Preco),00</p>
+                <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Read" asp-route-id="@ViewBag.IdMaiorV">Visualizar item</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Item com maior quantidade em estoque</h5>
+                <p class="card-text">Nome: @ViewBag.NomeMaiorQ</p>
+                <p class="card-text">Quantidade: @Model.Max(Model => Model.Quantidade) Unidades</p>
+                <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Read" asp-route-id="@ViewBag.IdMaiorQ">Visualizar item</a>
+            </div>
+        </div>        
+    </div>
+</div>
+<br />
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Fabricante com maior quantidade de Remédios em estoque</h5>
+                <p class="card-text">@Model.Max(Model => Model.Fabricante)</p>
+                <a href="#" class="btn btn-outline-dark">Go somewhere</a>
+            </div>
+        </div>
+    </div>    
+</div>
+
+
+
+
+
+
+
+

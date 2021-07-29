@@ -50,7 +50,7 @@ namespace Farmacia
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Remedio}/{action=Home}/{id?}");
             });
         }
     }

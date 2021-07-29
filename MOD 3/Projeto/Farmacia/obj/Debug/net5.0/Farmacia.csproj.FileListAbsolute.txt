@@ -359,3 +359,4 @@ C:\blue\MOD 3\Projeto\Farmacia\obj\Debug\net5.0\Razor\Views\Remedio\Create.cshtm
 C:\blue\MOD 3\Projeto\Farmacia\obj\Debug\net5.0\Razor\Views\Remedio\Read.cshtml.g.cs
 C:\blue\MOD 3\Projeto\Farmacia\obj\Debug\net5.0\Razor\Views\Remedio\Update.cshtml.g.cs
 C:\blue\MOD 3\Projeto\Farmacia\obj\Debug\net5.0\Razor\Views\Remedio\Delete.cshtml.g.cs
+C:\blue\MOD 3\Projeto\Farmacia\obj\Debug\net5.0\Razor\Views\Remedio\Home.cshtml.g.cs

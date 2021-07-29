@@ -1,62 +1,75 @@
 ﻿@model List<Remedio>
-    <br />
-    <br />
-    <br />
-    <br />
-    <h1>Remédios em Estoque</h1>
-    <br />
+<br />
+<br />
+<br />
+<br />
+<h1>Remédios em Estoque</h1>
+<br />
 
-    <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Create">Criar um novo Remédio</a>
-    <br />
-    <br />
+<a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Create">Criar um novo Remédio</a>
 
 
-    @if (Model.Count() > 10)
-    {
-        <center><h2>Remédio cadastrado com sucesso.</h2></center>
-        <br />
-    }
+
+@if (ViewBag.ordenar == true)
+{
+    <a class="btn btn-dark" asp-action="Index">Remover ordenação</a>
+}
+else
+{
+    <a class="btn btn-outline-dark" href="/Remedio/Index?ordenar=true">Ordernar por nome</a>
+}
+
+<br />
+<br />
 
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Id)</th>
-                <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Nome)</th>
-                <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Fabricante)</th>
-                <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Quantidade)</th>
-                <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Preco)</th>
-                <th class="table-dark" scope="col">Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (Remedio r in Model)
-            {
-                <tr>
-                    <th scope="row">@Html.DisplayFor(Model => r.Id)</th>
-                    <td>@Html.DisplayFor(Model => r.Nome)</td>
-                    <td>@Html.DisplayFor(Model => r.Fabricante)</td>
-                    <td>@Html.DisplayFor(Model => r.Quantidade) Unidades</td>
-                    <td>R$@Html.DisplayFor(Model => r.Preco)</td>
-                    <td>
-                        <a asp-controller="Remedio" asp-action="Read" asp-route-id="@r.Id">Visualizar</a> -
-                        <a asp-controller="Remedio" asp-action="Update" asp-route-id="@r.Id">Editar</a> -
-                        <a asp-controller="Remedio" asp-action="Delete" asp-route-id="@r.Id">Deletar</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-
-    <div class="card" style="width: 18rem;">
-        <div class="card-header">
-            Informações gerais:
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Total de itens: @Model.Count()</li>
-            <li class="list-group-item">Item mais caro: valor e nome </li>
-            <li class="list-group-item">Item fora da validade: nome do item</li>
-            <li class="list-group-item">Item com maior quantidade em estoque: @ViewBag.y @ViewBag.x </li>
-        </ul>
+@if (Model.Count() > 10)
+{
+    <div class="alert alert-dark" role="alert">
+        Remédio cadastrado com sucesso.
     </div>
+    <br />
+}
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Id)</th>
+            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Nome)</th>
+            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Fabricante)</th>
+            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Quantidade)</th>
+            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Preco)</th>
+            <th class="table-dark" scope="col">Ações</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (Remedio r in Model)
+        {
+            <tr>
+                <th scope="row">@Html.DisplayFor(Model => r.Id)</th>
+                <td>@Html.DisplayFor(Model => r.Nome)</td>
+                <td>@Html.DisplayFor(Model => r.Fabricante)</td>
+                <td>@Html.DisplayFor(Model => r.Quantidade) Unidades</td>
+                <td>R$@Html.DisplayFor(Model => r.Preco)</td>
+                <td>
+                    <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Read" asp-route-id="@r.Id">Visualizar</a>
+                    <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Update" asp-route-id="@r.Id">Editar</a>
+                    <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Delete" asp-route-id="@r.Id">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@if (Model.Count() == 0)
+{
+    <div class="alert alert-dark" role="alert">
+        Remédio não encontrado!
+    </div>
+}
+
+
+
 
