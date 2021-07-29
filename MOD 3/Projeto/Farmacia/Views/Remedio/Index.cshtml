@@ -3,8 +3,7 @@
 <br />
 <br />
 <br />
-<h1>Remédios em Estoque</h1>
-<br />
+
 
 <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Create">Criar um novo Remédio</a>
 
@@ -28,7 +27,6 @@ else
     <div class="alert alert-dark" role="alert">
         Remédio cadastrado com sucesso.
     </div>
-    <br />
 }
 
 
@@ -65,7 +63,7 @@ else
 </table>
 @if (Model.Count() == 0)
 {
-    <div class="alert alert-dark" role="alert">
+    <div class="alert alert-danger" role="alert">
         Remédio não encontrado!
     </div>
 }

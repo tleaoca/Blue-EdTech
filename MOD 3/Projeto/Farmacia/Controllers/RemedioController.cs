@@ -42,16 +42,16 @@ namespace Farmacia.Controllers
 
         public List<Remedio> getRemedios()
         {
-            remedios.Add(new Remedio { Id = 1, Nome = "Rivotril", Fabricante = "Blabla", Quantidade = 151231, Preco = 30, Validade = new DateTime(2000, 10, 20) });
-            remedios.Add(new Remedio { Id = 2, Nome = "Omeprazol", Fabricante = "Blabla", Quantidade = 12, Preco = 300, Validade = new DateTime(2000, 10, 20) });
-            remedios.Add(new Remedio { Id = 3, Nome = "Viagra1", Fabricante = "Blabla", Quantidade = 11, Preco = 30, Validade = new DateTime(2000, 10, 20) });
-            remedios.Add(new Remedio { Id = 4, Nome = "Viagra2", Fabricante = "Blabla", Quantidade = 1, Preco = 30, Validade = new DateTime(2000, 10, 20) });
-            remedios.Add(new Remedio { Id = 5, Nome = "Viagra3", Fabricante = "Blabla", Quantidade = 13, Preco = 30, Validade = new DateTime(2000, 10, 20) });
-            remedios.Add(new Remedio { Id = 6, Nome = "Viagra4", Fabricante = "Blabla", Quantidade = 16, Preco = 30, Validade = new DateTime(2000, 10, 20) });
-            remedios.Add(new Remedio { Id = 7, Nome = "Viagra5", Fabricante = "Blabla", Quantidade = 17, Preco = 30, Validade = new DateTime(2000, 10, 20) });
-            remedios.Add(new Remedio { Id = 8, Nome = "Viagra6", Fabricante = "Blabla", Quantidade = 19, Preco = 30, Validade = new DateTime(2000, 10, 20) });
-            remedios.Add(new Remedio { Id = 9, Nome = "Viagra7", Fabricante = "Blabla", Quantidade = 8, Preco = 30, Validade = new DateTime(2000, 10, 20) });
-            remedios.Add(new Remedio { Id = 10, Nome = "Viagra", Fabricante = "Blabla", Quantidade = 6, Preco = 30, Validade = new DateTime(2000, 10, 20) });
+            remedios.Add(new Remedio { Id = 01, Nome = "Dipirona", Fabricante = "Medley", Quantidade = 43, Preco = 26, Validade = new DateTime(2024, 01, 12) });
+            remedios.Add(new Remedio { Id = 02, Nome = "Loratadina", Fabricante = "Cimed", Quantidade = 22, Preco = 8, Validade = new DateTime(2022, 02, 21) });
+            remedios.Add(new Remedio { Id = 03, Nome = "Simeticona", Fabricante = "Needs", Quantidade = 15, Preco = 13, Validade = new DateTime(2021, 03, 06) });
+            remedios.Add(new Remedio { Id = 04, Nome = "Paracetamol", Fabricante = "Cimed", Quantidade = 50, Preco = 7, Validade = new DateTime(2025, 04, 10) });
+            remedios.Add(new Remedio { Id = 05, Nome = "Omeprazol", Fabricante = "Medley", Quantidade = 13, Preco = 37, Validade = new DateTime(2021, 05, 04) });
+            remedios.Add(new Remedio { Id = 06, Nome = "Clonazepam", Fabricante = "Medley", Quantidade = 16, Preco = 21, Validade = new DateTime(2021, 06, 28) });
+            remedios.Add(new Remedio { Id = 07, Nome = "Ondansetrona", Fabricante = "Ems", Quantidade = 23, Preco = 26, Validade = new DateTime(2022, 07, 15) });
+            remedios.Add(new Remedio { Id = 08, Nome = "Gliclazida", Fabricante = "Ranbaxy", Quantidade = 19, Preco = 9, Validade = new DateTime(2021, 08, 12) });
+            remedios.Add(new Remedio { Id = 09, Nome = "Prometazina", Fabricante = "Teuto", Quantidade = 8, Preco = 5, Validade = new DateTime(2020, 09, 03) });
+            remedios.Add(new Remedio { Id = 10, Nome = "Hidroclorotiazida", Fabricante = "Medley", Quantidade = 6, Preco = 3, Validade = new DateTime(2020, 12, 30) });
             return remedios;
         }
 

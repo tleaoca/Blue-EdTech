@@ -3,9 +3,8 @@
 <br />
 <br />
 <br />
+<div class="alert alert-dark" role="alert">Remédio de registro nº @Model.Id</div>
 
-<center><h1>Remédio de registro @Model.Id</h1></center>
-<br />
 <dl class="row">
     <dt class="col-sm-3">@Html.DisplayNameFor(Model => Model.Id)</dt>
     <dd class="col-sm-9">@Html.DisplayFor(Model => Model.Id)</dd>
@@ -17,7 +16,17 @@
     <dd class="col-sm-9">R$@Html.DisplayFor(Model => Model.Preco)</dd>
     <dt class="col-sm-3">@Html.DisplayNameFor(Model => Model.Quantidade)</dt>
     <dd class="col-sm-9">@Html.DisplayFor(Model => Model.Quantidade) Unidades</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(Model => Model.Validade)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(Model => Model.Validade)</dd>
 </dl>
+
+@if (Model.Validade < DateTime.Today)
+{
+
+    <div class="alert alert-danger" role="alert">
+        Remédio vencido!
+    </div>
+}
 
 <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Home">Voltar para Home</a>
 <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Index">Visualizar toda lista</a>
