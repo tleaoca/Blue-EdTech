@@ -18,7 +18,6 @@ namespace Farmacia.Data
                 var serviceProvider = scope.ServiceProvider;
                 var context = serviceProvider.GetRequiredService<RemedioContext>();
                 context.Database.Migrate();
-
                 if (!context.Remedio.Any())
                 {
                     context.Add(new Remedio { Nome = "Dipirona", Fabricante = "Medley", Quantidade = 43, Preco = 26, Validade = new DateTime(2024, 01, 12) });

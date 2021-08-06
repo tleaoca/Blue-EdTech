@@ -10,25 +10,39 @@ namespace Farmacia.Controllers
 {
     public class RemedioController : Controller
     {
-        IRemedioService service;
-        public RemedioController(IRemedioService service)
+        IRemedioService staticService, SqlService, BothService, service;
+        public RemedioController(RemedioStaticService staticService, RemedioSqlService SqlService, RemedioBothService BothService)
         {
-            this.service = service;
-        }
-        //RemedioStaticService _staticService;
-        //RemedioSqlService _sqlService;
-        //public RemedioController(RemedioStaticService staticService, RemedioSqlService sqlService)
-        //{
-        //    _staticService = staticService;
-        //    _sqlService = sqlService;
-        //}       
+            this.staticService = staticService;
+            this.SqlService = SqlService;
+            this.BothService = BothService;
+            service = SqlService;
+        }            
         
-        public IActionResult Index(string id, bool ordenar=false)
-        {            
+        public IActionResult Index(string id, bool ordenar=false, string service2 = "sql")
+        {
+            SelectService(service2);
             ViewBag.ordenar = ordenar;
-            return View(service.all(id, ordenar));
+            ViewBag.service = service2;
+            List<Remedio> remedios = service.all(id,ordenar,service2);
+            return View("Index", remedios);
         }
 
+        private void SelectService(string service2 = "sql")
+        {
+            switch (service2)
+            {
+                case "static":
+                    this.service = this.staticService;
+                    break;
+                case "both":
+                    this.service = this.BothService;
+                    break;
+                default:
+                    this.service = this.SqlService;
+                    break;
+            }
+        }
 
         public IActionResult Read(int? id)
         {
@@ -72,7 +86,6 @@ namespace Farmacia.Controllers
         public IActionResult Update(Remedio remedio)
         {
             if (!ModelState.IsValid) return View(remedio);
-
             ViewBag.msgUpdate = true;
             if (service.update(remedio)) //// PacienteStaticService.Create(paciente)
             {
@@ -81,8 +94,7 @@ namespace Farmacia.Controllers
             else
             {
                 return View(remedio);
-            }
-            
+            }            
         }
 
         [HttpGet]

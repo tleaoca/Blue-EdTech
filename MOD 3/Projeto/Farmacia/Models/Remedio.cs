@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace Farmacia.Models
 {
     public class Remedio
-    {
-        
+    {        
         [Display(Name = "#")]
         public int Id { get; set; }
 
@@ -18,13 +17,12 @@ namespace Farmacia.Models
 
         [Required(ErrorMessage = "Informe uma quantidade.")]
         public int? Quantidade { get; set; }
-                
+
+        [Required(ErrorMessage = "Informe uma quantidade.")] //aparece outra msg de erro(mesmo sem ter essa linha no model), talvez pq seja decimal?
         [Display(Name = "Preço")]
         public decimal Preco { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime? Validade { get; set; }
-
-   
+        public DateTime? Validade { get; set; }   
     }
 }

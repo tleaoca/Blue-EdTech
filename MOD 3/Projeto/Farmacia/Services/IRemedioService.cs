@@ -8,7 +8,7 @@ namespace Farmacia.Services
 {
     public interface IRemedioService
     {
-        List<Remedio> all(string id = null, bool ordenar = false);
+        List<Remedio> all(string id = null, bool ordenar = false, string service2 = null);
         public bool create(Remedio remedio);
         public Remedio get(int? id);
         public bool update(Remedio r);

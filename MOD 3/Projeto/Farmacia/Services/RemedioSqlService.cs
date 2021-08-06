@@ -14,24 +14,20 @@ namespace Farmacia.Services
         {
             _context = context;
         }
-
-        public List<Remedio> all(string id = null, bool ordenar = false)
+        public List<Remedio> all(string id = null, bool ordenar = false, string service2 = "sql")
         {
             List<Remedio> lista = _context.Remedio.ToList();
-
             if (ordenar)
             {
                 lista = lista.OrderBy(p => p.Nome).ToList();
                 return lista;
             }
-
             return id != null ?
                lista.FindAll(a =>
                     a.Nome.ToLower().Contains(id.ToLower())
                 ) :
                 lista;
         }
-
         public bool create(Remedio remedio)
         {
             try

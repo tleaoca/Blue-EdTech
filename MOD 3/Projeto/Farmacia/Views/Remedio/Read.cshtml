@@ -1,10 +1,6 @@
 ﻿@model Remedio
-<br />
-<br />
-<br />
-<br />
+<br /><br /><br /><br />
 <div class="alert alert-dark" role="alert">Remédio de registro nº @Model.Id</div>
-
 <dl class="row">
     <dt class="col-sm-3">@Html.DisplayNameFor(Model => Model.Id)</dt>
     <dd class="col-sm-9">@Html.DisplayFor(Model => Model.Id)</dd>
@@ -19,7 +15,6 @@
     <dt class="col-sm-3">@Html.DisplayNameFor(Model => Model.Validade)</dt>
     <dd class="col-sm-9">@Html.DisplayFor(Model => Model.Validade)</dd>
 </dl>
-
 @if (Model.Validade < DateTime.Today)
 {
 
@@ -27,6 +22,5 @@
         Remédio vencido!
     </div>
 }
-
 <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Home">Voltar para Home</a>
 <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Index">Visualizar toda lista</a>

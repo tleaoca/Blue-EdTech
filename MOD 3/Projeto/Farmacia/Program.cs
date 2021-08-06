@@ -18,7 +18,6 @@ namespace Farmacia
             SeedDatabase.Initialize(app);                
             app.Run();
         }
-
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>

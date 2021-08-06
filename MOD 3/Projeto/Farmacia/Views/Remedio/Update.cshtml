@@ -1,16 +1,11 @@
 ﻿@model Remedio
-<br />
-<br />
-<br />
-<br />
-
+<br /><br /><br /><br />
 <form asp-action="Update">
     <input type="hidden" asp-for="Id"/>
     <div class="mb-3">
         <label asp-for="Nome" class="form-label"></label>
         <input asp-for="Nome" class="form-control" />
         <span class="text-danger" asp-validation-for="Nome"></span>
-
     </div>
     <div class="mb-3">
         <label asp-for="Fabricante" class="form-label"></label>

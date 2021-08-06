@@ -1,4 +1,5 @@
-﻿using Farmacia.Models;
+﻿using Farmacia.Data;
+using Farmacia.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,8 +7,13 @@ using System.Threading.Tasks;
 
 namespace Farmacia.Services
 {
-    public class RemedioStaticService : IRemedioService
-    {       
+    public class RemedioBothService : IRemedioService
+    {
+        RemedioContext _context;
+        public RemedioBothService(RemedioContext context)
+        {
+            _context = context;
+        }
         public List<Remedio> getRemedios()
         {
             List<Remedio> remedios = new List<Remedio>();
@@ -23,39 +29,31 @@ namespace Farmacia.Services
             remedios.Add(new Remedio { Id = 10, Nome = "Hidroclorotiazida", Fabricante = "Medley", Quantidade = 6, Preco = 3, Validade = new DateTime(2020, 12, 30) });
             return remedios;
         }
-        public List<Remedio> all(string id = null, bool ordenar = false, string service2 = null)
+        public List<Remedio> all(string id = null, bool ordenar = false, string service2 = "sql")
         {
-            if (id != null)
-            {
-                return getRemedios().FindAll(x =>
-                    x.Nome.ToLower().Contains(id.ToLower())
-                );
-            }
+            List<Remedio> listaStatic = getRemedios();
+            List<Remedio> listaSql = _context.Remedio.ToList();
+            List<Remedio> lista = new List<Remedio>();
+            lista.AddRange(listaStatic);
+            lista.AddRange(listaSql);
             if (ordenar)
             {
-                var lista = getRemedios();
-                lista = lista.OrderBy(r => r.Nome).ToList();
+                lista = lista.OrderBy(p => p.Nome).ToList();
                 return lista;
             }
-            return getRemedios();
+            return id != null ?
+               lista.FindAll(a =>
+                    a.Nome.ToLower().Contains(id.ToLower())
+                ) :
+                lista;
         }
         public bool create(Remedio remedio)
         {
-            try
-            {
-                List<Remedio> remedios = getRemedios();
-                remedio.Id = remedios.Count() + 1;
-                remedios.Add(remedio);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+            return false;
         }
         public Remedio get(int? id)
         {
-            return getRemedios().FirstOrDefault(r => r.Id == id);
+            return null;
         }
         public bool update(Remedio r)
         {

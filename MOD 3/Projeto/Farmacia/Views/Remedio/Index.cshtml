@@ -1,13 +1,6 @@
 ﻿@model List<Remedio>
-<br />
-<br />
-<br />
-<br />
-
-
+<br /><br /><br /><br />
 <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Create">Criar um novo Remédio</a>
-
-
 
 @if (ViewBag.ordenar == true)
 {
@@ -17,11 +10,23 @@ else
 {
     <a class="btn btn-outline-dark" href="/Remedio/Index?ordenar=true">Ordernar por nome</a>
 }
+<br /><br />
 
-<br />
-<br />
+<form class="d-flex" asp-controller="Remedio" asp-action="Index">
+    <select name="service2" class="form-control">
+        <option value="sql" selected>Dados SQL</option>
+        <option value="static">Dados Estáticos</option>
+        <option value="both">Ambos</option>
+    </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input width="100" class="btn btn-outline-dark" type="submit" value="Alterar" />
+</form><br />
 
-
+@if (Model.Count() == 0)
+{
+    <div class="alert alert-danger" role="alert">
+        Remédio não encontrado!
+    </div>
+}
 @if (ViewBag.create == true)
 {
     <div class="alert alert-dark" role="alert">
@@ -40,9 +45,6 @@ else
         Remédio alterado com sucesso.
     </div>
 }
-
-
-
 <table class="table">
     <thead>
         <tr>
@@ -54,7 +56,6 @@ else
             <th class="table-dark" scope="col">Ações</th>
         </tr>
     </thead>
-
     <tbody>
         @foreach (Remedio r in Model)
         {
@@ -64,21 +65,23 @@ else
                 <td>@Html.DisplayFor(Model => r.Fabricante)</td>
                 <td>@Html.DisplayFor(Model => r.Quantidade) Unidades</td>
                 <td>R$@Html.DisplayFor(Model => r.Preco)</td>
-                <td>
-                    <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Read" asp-route-id="@r.Id">Visualizar</a>
-                    <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Update" asp-route-id="@r.Id">Editar</a>
-                    <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Delete" asp-route-id="@r.Id">Deletar</a>
-                </td>
+                @if (ViewBag.service == "sql")
+                {
+                    <td>
+                        <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Read" asp-route-id="@r.Id">Visualizar</a>
+                        <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Update" asp-route-id="@r.Id">Editar</a>
+                        <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Delete" asp-route-id="@r.Id">Deletar</a>
+                    </td>
+                }
+                else
+                {
+                    <td>Ação não disponível</td>
+}
             </tr>
         }
     </tbody>
 </table>
-@if (Model.Count() == 0)
-{
-    <div class="alert alert-danger" role="alert">
-        Remédio não encontrado!
-    </div>
-}
+
 
 
 
