@@ -12,10 +12,13 @@ namespace Farmacia.Models
         [Display(Name = "#")]
         public int Id { get; set; }
 
+        [Required(ErrorMessage = "Informe um nome para o remédio.")]
         public string Nome { get; set; }
         public string Fabricante { get; set; }
-        public int? Quantidade { get; set; }
 
+        [Required(ErrorMessage = "Informe uma quantidade.")]
+        public int? Quantidade { get; set; }
+                
         [Display(Name = "Preço")]
         public decimal Preco { get; set; }
 

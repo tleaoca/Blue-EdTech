@@ -1,6 +1,9 @@
+using Farmacia.Data;
+using Farmacia.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +27,15 @@ namespace Farmacia
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<RemedioContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("Farmacia"))
+            );
+
+            services.AddTransient<RemedioStaticService>();
+            services.AddTransient<RemedioSqlService>();
+            services.AddTransient<IRemedioService, RemedioSqlService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

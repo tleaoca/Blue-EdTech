@@ -8,7 +8,7 @@
     <h1>Bem vindo ao sistema da Farmácia Blue.</h1>
     <br />
     <div class="alert alert-dark" role="alert">Atualmente existem @Model.Count() itens cadastrados.</div>
-    
+
 </div>
 <div class="row">
     <div class="col-sm-6">
@@ -29,22 +29,14 @@
                 <p class="card-text">Quantidade: @Model.Max(Model => Model.Quantidade) Unidades</p>
                 <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Read" asp-route-id="@ViewBag.IdMaiorQ">Visualizar item</a>
             </div>
-        </div>        
+        </div>
     </div>
 </div>
 <br />
-
-<div class="row">
-    <div class="col-sm-6">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Fabricante com maior quantidade de Remédios em estoque</h5>
-                <p class="card-text">@Model.Max(Model => Model.Fabricante)</p>
-                <a href="#" class="btn btn-outline-dark">Go somewhere</a>
-            </div>
-        </div>
-    </div>    
-</div>
+@if (ViewBag.qRemedioV > 0)
+{
+    <div class="alert alert-danger" role="alert">Cuidado! Existem @ViewBag.qRemedioV tipos de remédio fora da validade.</div>
+}
 
 
 

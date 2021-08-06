@@ -20,7 +20,18 @@ namespace Consultorio.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            Supervisor f1 = new Supervisor("Josef") { Id = 01, Salario = 10000 };
+            Enfermeiro f2 = new Enfermeiro("Josefina") { Id = 02, Salario = 5000 };
+            Funcionario f3 = new Funcionario("Alajosef") { Id = 03, Salario = 2000 };
+
+            List<Funcionario> lista = new();
+            lista.Add(f1);
+            lista.Add(f2);
+            lista.Add(f3);
+
+            return Ok(lista);
+
+            //return View();
         }
 
         public IActionResult Privacy()

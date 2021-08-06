@@ -8,22 +8,27 @@
     <div class="mb-3">
         <label asp-for="Nome" class="form-label"></label>
         <input asp-for="Nome" class="form-control" />
+        <span class="text-danger" asp-validation-for="Nome"></span>
     </div>
     <div class="mb-3">
         <label asp-for="Fabricante" class="form-label"></label>
         <input asp-for="Fabricante" class="form-control" />
+        <span class="text-danger" asp-validation-for="Fabricante"></span>
     </div>
     <div class="mb-3">
         <label asp-for="Quantidade" class="form-label"></label>
         <input asp-for="Quantidade" class="form-control" />
+        <span class="text-danger" asp-validation-for="Quantidade"></span>
     </div>
     <div class="mb-3">
         <label asp-for="Preco" class="form-label"></label>
         <input asp-for="Preco" class="form-control" />
+        <span class="text-danger" asp-validation-for="Preco"></span>
     </div>
     <div class="mb-3">
         <label asp-for="Validade" class="form-label"></label>
         <input asp-for="Validade" class="form-control" />
+        <span class="text-danger" asp-validation-for="Validade"></span>
     </div>
     <input class="btn btn-outline-dark" type="submit" value="Criar" />
     <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Index">Voltar</a>

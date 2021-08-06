@@ -22,10 +22,22 @@ else
 <br />
 
 
-@if (Model.Count() > 10)
+@if (ViewBag.create == true)
 {
     <div class="alert alert-dark" role="alert">
         Remédio cadastrado com sucesso.
+    </div>
+}
+@if (ViewBag.msgDelete == true)
+{
+    <div class="alert alert-dark" role="alert">
+        Remédio removido com sucesso.
+    </div>
+}
+@if (ViewBag.msgUpdate == true)
+{
+    <div class="alert alert-dark" role="alert">
+        Remédio alterado com sucesso.
     </div>
 }
 
