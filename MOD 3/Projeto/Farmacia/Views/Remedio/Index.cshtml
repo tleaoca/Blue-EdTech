@@ -43,10 +43,8 @@ else
     </thead>
     <tbody>
         @foreach (Remedio r in Model)
-        {
-
-            var classe = r.Pedidos.Count > 0 ? "text-success" : "";
-        <tr class="@classe">
+        {            
+        <tr>
             <th scope="row">@Html.DisplayFor(Model => r.Id)</th>
             <td class="text-center">@Html.DisplayFor(Model => r.Nome)</td>
             <td class="text-center">@Html.DisplayFor(Model => r.Fabricante)</td>
@@ -60,7 +58,6 @@ else
                     <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Delete" asp-route-id="@r.Id">Deletar</a>
                 </td>
             }
-
             else
             {
                 <td>Ação não disponível</td>
@@ -73,7 +70,6 @@ else
                 {
                     <td></td>
                 }
-
         </tr>
         }
     </tbody>
