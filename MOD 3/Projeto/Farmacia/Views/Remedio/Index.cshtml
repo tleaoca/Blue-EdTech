@@ -12,6 +12,7 @@ else
 }
 <br /><br />
 
+
 <form class="d-flex" asp-controller="Remedio" asp-action="Index">
     <select name="service2" class="form-control">
         <option value="sql" selected>Dados SQL</option>
@@ -27,57 +28,53 @@ else
         Remédio não encontrado!
     </div>
 }
-@if (ViewBag.create == true)
-{
-    <div class="alert alert-dark" role="alert">
-        Remédio cadastrado com sucesso.
-    </div>
-}
-@if (ViewBag.msgDelete == true)
-{
-    <div class="alert alert-dark" role="alert">
-        Remédio removido com sucesso.
-    </div>
-}
-@if (ViewBag.msgUpdate == true)
-{
-    <div class="alert alert-dark" role="alert">
-        Remédio alterado com sucesso.
-    </div>
-}
 <table class="table">
     <thead>
         <tr>
-            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Id)</th>
-            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Nome)</th>
-            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Fabricante)</th>
-            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Quantidade)</th>
-            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Preco)</th>
-            <th class="table-dark" scope="col">Ações</th>
+            <th class="table-dark text-center" scope="col">@Html.DisplayNameFor(Model => Model.First().Id)</th>
+            <th class="table-dark text-center" scope="col">@Html.DisplayNameFor(Model => Model.First().Nome)</th>
+            <th class="table-dark text-center" scope="col">@Html.DisplayNameFor(Model => Model.First().Fabricante)</th>
+            <th class="table-dark text-center" scope="col">@Html.DisplayNameFor(Model => Model.First().Quantidade)</th>
+            <th class="table-dark text-center" scope="col">@Html.DisplayNameFor(Model => Model.First().Preco)</th>
+            <th class="table-dark text-center" scope="col">Ações</th>
+            <th class="table-dark" scope="col">Status</th>
+
         </tr>
     </thead>
     <tbody>
         @foreach (Remedio r in Model)
         {
-            <tr>
-                <th scope="row">@Html.DisplayFor(Model => r.Id)</th>
-                <td>@Html.DisplayFor(Model => r.Nome)</td>
-                <td>@Html.DisplayFor(Model => r.Fabricante)</td>
-                <td>@Html.DisplayFor(Model => r.Quantidade) Unidades</td>
-                <td>R$@Html.DisplayFor(Model => r.Preco)</td>
-                @if (ViewBag.service == "sql")
+
+            var classe = r.Pedidos.Count > 0 ? "text-success" : "";
+        <tr class="@classe">
+            <th scope="row">@Html.DisplayFor(Model => r.Id)</th>
+            <td class="text-center">@Html.DisplayFor(Model => r.Nome)</td>
+            <td class="text-center">@Html.DisplayFor(Model => r.Fabricante)</td>
+            <td class="text-center">@Html.DisplayFor(Model => r.Quantidade) Unidades</td>
+            <td class="text-center">R$@Html.DisplayFor(Model => r.Preco)</td>
+            @if (ViewBag.service == "sql")
+            {
+                <td class="text-center">
+                    <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Read" asp-route-id="@r.Id">Visualizar</a>
+                    <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Update" asp-route-id="@r.Id">Editar</a>
+                    <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Delete" asp-route-id="@r.Id">Deletar</a>
+                </td>
+            }
+
+            else
+            {
+                <td>Ação não disponível</td>
+            }
+            @if (r.Validade < DateTime.Today)
                 {
-                    <td>
-                        <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Read" asp-route-id="@r.Id">Visualizar</a>
-                        <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Update" asp-route-id="@r.Id">Editar</a>
-                        <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Delete" asp-route-id="@r.Id">Deletar</a>
-                    </td>
+                    <td class="text-danger font-weight-bold">VENCIDO</td>
                 }
                 else
                 {
-                    <td>Ação não disponível</td>
-}
-            </tr>
+                    <td></td>
+                }
+
+        </tr>
         }
     </tbody>
 </table>

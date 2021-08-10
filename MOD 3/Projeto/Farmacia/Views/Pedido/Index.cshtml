@@ -1,0 +1,37 @@
+﻿@model List<Pedido>
+<br /><br /><br /><br />
+<a class="btn btn-outline-dark" asp-action="Create">Criar um novo Pedido</a>
+<br /><br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Id)</th>
+            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().Cliente)</th>
+            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().dataPedido)</th>            
+            <th class="table-dark" scope="col">@Html.DisplayNameFor(Model => Model.First().remedio.Nome)</th>
+            <th class="table-dark text-center" scope="col">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Pedido r in Model)
+        {
+            <tr>
+                <th scope="row">@Html.DisplayFor(Model => r.Id)</th>
+                <td>@Html.DisplayFor(Model => r.Cliente)</td>
+                <td>@Html.DisplayFor(Model => r.dataPedido)</td>                
+                <td>@Html.DisplayFor(Model => r.remedio.Nome)</td>                
+                    <td class="text-center">
+                        <a class="btn btn-outline-dark" asp-action="Read" asp-route-id="@r.Id">Visualizar</a>
+                        <a class="btn btn-outline-dark" asp-action="Update" asp-route-id="@r.Id">Editar</a>
+                        <a class="btn btn-outline-dark" asp-action="Delete" asp-route-id="@r.Id">Deletar</a>
+                    </td>   
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+

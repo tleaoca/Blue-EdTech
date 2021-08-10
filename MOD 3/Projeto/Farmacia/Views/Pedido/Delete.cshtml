@@ -1,0 +1,10 @@
+﻿@model Pedido
+<br /><br /><br /><br />
+<center>
+    <h1>Deletar pedido de ID @Model.Id ?</h1>
+    <br />    <br />
+    <form asp-action="Delete">
+        <input class="btn btn-outline-dark" type="submit" value="Confirmar" />
+        <a class="btn btn-outline-dark" asp-action="Index">Cancelar</a>
+    </form>
+</center>

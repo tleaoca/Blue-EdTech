@@ -131,7 +131,7 @@ namespace Farmacia.Controllers
                     ViewBag.IdMaiorQ = idRemedioMaiorQ;
                 }
             }
-            decimal maiorV = 0;
+            decimal? maiorV = 0;
             string nomeRemedioMaiorV = "";
             int? idRemedioMaiorV = 0;
             foreach (Remedio r in remedios)

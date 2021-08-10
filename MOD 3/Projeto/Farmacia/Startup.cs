@@ -34,6 +34,7 @@ namespace Farmacia
             services.AddTransient<RemedioBothService>();
             services.AddTransient<RemedioSqlService>();
             services.AddTransient<IRemedioService, RemedioSqlService>();
+            services.AddTransient<IPedidoService, PedidoSqlService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

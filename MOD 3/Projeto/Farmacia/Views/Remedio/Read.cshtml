@@ -1,5 +1,8 @@
 ﻿@model Remedio
-<br /><br /><br /><br />
+<br />
+<br />
+<br />
+<br />
 <div class="alert alert-dark" role="alert">Remédio de registro nº @Model.Id</div>
 <dl class="row">
     <dt class="col-sm-3">@Html.DisplayNameFor(Model => Model.Id)</dt>
@@ -22,5 +25,19 @@
         Remédio vencido!
     </div>
 }
+@if (Model.Pedidos.Count > 0)
+{
+    <h3>Pedidos:</h3>
+    @foreach (Pedido p in Model.Pedidos)
+    {
+<dl class="row">
+    <dt class="col-sm-3">@Html.DisplayNameFor(x => p.dataPedido)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(x => p.dataPedido)</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(x => p.Cliente)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(x => p.Cliente)</dd>    
+</dl>
+    }
+}
+
 <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Home">Voltar para Home</a>
 <a class="btn btn-outline-dark" asp-controller="Remedio" asp-action="Index">Visualizar toda lista</a>

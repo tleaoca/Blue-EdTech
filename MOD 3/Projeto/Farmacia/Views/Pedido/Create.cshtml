@@ -1,0 +1,29 @@
+﻿@model Pedido
+<br /><br /><br /><br />
+<form asp-action="Create">
+    <div class="mb-3">
+        <label asp-for="dataPedido" class="form-label"></label>
+        <input asp-for="dataPedido" class="form-control" />
+        <span class="text-danger" asp-validation-for="dataPedido"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Cliente" class="form-label"></label>
+        <input asp-for="Cliente" class="form-control" />
+        <span class="text-danger" asp-validation-for="Cliente"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Observacao" class="form-label"></label>
+        <input asp-for="Observacao" class="form-control" />
+        <span class="text-danger" asp-validation-for="Observacao"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="remedioId" class="form-label"></label>
+        <select asp-for="remedioId" class="form-control" asp-items="ViewBag.listaRemedios">
+            <option>Selecione um remédio...</option>
+        </select>
+        <span class="text-danger" asp-validation-for="remedioId"></span>
+    </div>    
+    <input class="btn btn-outline-dark" type="submit" value="Criar" />
+    <a class="btn btn-outline-dark" asp-action="Index">Voltar</a>
+</form>
+
