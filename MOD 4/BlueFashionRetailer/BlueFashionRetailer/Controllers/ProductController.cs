@@ -85,5 +85,25 @@ namespace BlueFashionRetailer.Controllers
                 return Ok(response);
             }
         }
+        [Route("{id}")]
+        [HttpDelete]
+        public IActionResult Delete(int? id)
+        {
+            List<Product> produtos = All();
+            Product produtoExistente = All().Find(p => p.Id == id);
+
+            var response = new APIResponse<string>();
+            if (produtoExistente == null)
+            {
+                response.Error = "Não foi encontrado o produto informado.";
+                return NotFound(response);
+
+            }
+            else
+            {
+                response.Results = "Produto excluido com sucesso.";
+                return Ok(response);
+            }
+        }
     }
 }
