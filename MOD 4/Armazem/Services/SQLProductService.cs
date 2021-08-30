@@ -36,7 +36,7 @@ namespace Armazem.Services
                 return false;
 
             try
-            {
+            {                
                 _context.Remove(this.Get(id));
                 _context.SaveChanges();
                 return true;
