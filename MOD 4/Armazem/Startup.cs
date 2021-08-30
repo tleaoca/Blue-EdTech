@@ -1,7 +1,10 @@
+using Armazem.API;
 using Armazem.Data;
 using Armazem.Services;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -32,6 +35,11 @@ namespace Armazem
                 options.UseSqlServer(Configuration.GetConnectionString("MAContext"))
             );
             services.AddTransient<IProductService, SQLProductService>();
+            services.AddTransient<IAuthService, AuthService>();
+            services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<MAContext>();
+
+            services.AddAuthentication("BasicAuthentication")
+                .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
             
         }
 
@@ -49,6 +57,7 @@ namespace Armazem
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

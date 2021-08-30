@@ -1,6 +1,7 @@
 ﻿using BlueFashionRetailer.API;
 using BlueFashionRetailer.Models;
 using BlueFashionRetailer.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace BlueFashionRetailer.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class ProductController : ApiBaseController
@@ -46,7 +48,12 @@ namespace BlueFashionRetailer.Controllers
                 ApiOk("Produto atualizado com sucesso") :
                 ApiNotFound("Erro ao atualizar o produto");
 
-
+        public IActionResult Random()
+        {
+            Random ale = new Random();
+            List<Product> lista = _service.All();
+            return ApiOk(lista[ale.Next(lista.Count())]);
+        }
 
         [Route("{id}")]
         [HttpDelete]

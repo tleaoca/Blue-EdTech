@@ -1,5 +1,6 @@
 ﻿using Armazem.Models;
 using Armazem.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Linq;
 
 namespace Armazem.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class ProductController : ApiBaseController
@@ -18,9 +20,11 @@ namespace Armazem.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult Index() => ApiOk(_service.All());
 
-        [Route("{id}"), HttpGet]        
+        [Route("{id}"), HttpGet]
+        [AllowAnonymous]
         public IActionResult Index(int? id)
         {
             Product existente = _service.Get(id);
