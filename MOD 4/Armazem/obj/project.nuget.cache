@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HP3vAM6u+tiIV1ihHkcptxU/D4QeauY88GO6Hwk7NjE3MXu66WS3efxvWumZgcdfZwa7GELHJHddRMM00RNwEg==",
+  "dgSpecHash": "8YGd8ySZvHLoHo7UWL3xF7akMZrexpliK48wd4BuiVDCLz9vzf3nNqRa0nMcw3gqCn+Y+2j8N5dR0w5JBhP22A==",
   "success": true,
-  "projectFilePath": "C:\\blue\\MOD 4\\Armazem\\Armazem.csproj",
+  "projectFilePath": "C:\\Blue-EdTech\\MOD 4\\Armazem\\Armazem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Thiago\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Thiago\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

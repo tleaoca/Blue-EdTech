@@ -6933,11 +6933,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\blue\\MOD 4\\Armazem\\Armazem.csproj",
+      "projectUniqueName": "C:\\Blue-EdTech\\MOD 4\\Armazem\\Armazem.csproj",
       "projectName": "Armazem",
-      "projectPath": "C:\\blue\\MOD 4\\Armazem\\Armazem.csproj",
+      "projectPath": "C:\\Blue-EdTech\\MOD 4\\Armazem\\Armazem.csproj",
       "packagesPath": "C:\\Users\\Thiago\\.nuget\\packages\\",
-      "outputPath": "C:\\blue\\MOD 4\\Armazem\\obj\\",
+      "outputPath": "C:\\Blue-EdTech\\MOD 4\\Armazem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Thiago\\AppData\\Roaming\\NuGet\\NuGet.Config",
