@@ -2,14 +2,18 @@
 using Armazem.Models;
 using Armazem.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
 using System.Security.Claims;
 
 namespace Armazem.Controllers
-{    
+{
+    [Produces(MediaTypeNames.Application.Json)]
+    [Consumes(MediaTypeNames.Application.Json)]    
     [ApiController]
     [Route("[controller]")]
     public class ProductController : ApiBaseController
@@ -20,9 +24,21 @@ namespace Armazem.Controllers
             _service = service;
         }
 
+        /// <summary>
+        /// Retorna lista de todos os produtos no banco de dados.
+        /// </summary>
+        /// <returns></returns>
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [HttpGet]        
         public IActionResult Index() => ApiOk(_service.All());
 
+        /// <summary>
+        /// Retorna produto específico do banco de dados.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [Route("{id}"), HttpGet]        
         public IActionResult Index(int? id)
         {
@@ -32,6 +48,11 @@ namespace Armazem.Controllers
                 ApiOk(existente);
         }
 
+        /// <summary>
+        /// Cria um novo produto no banco de dados.
+        /// </summary>
+        /// <param name="prod"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Create([FromBody] Product prod)
         {
@@ -41,7 +62,11 @@ namespace Armazem.Controllers
                 ApiNotFound("Erro ao criar o produto.");
         }
             
-
+        /// <summary>
+        /// Atualiza o produto informado no banco de dados.
+        /// </summary>
+        /// <param name="prod"></param>
+        /// <returns></returns>
         [HttpPut]
         public IActionResult Update([FromBody] Product prod)
         {
@@ -51,7 +76,11 @@ namespace Armazem.Controllers
                 ApiNotFound("Erro ao atualizar o produto.");
         }
             
-
+        /// <summary>
+        /// Deleta um produto informado do banco de dados.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [AuthorizeRoles(RoleType.Admin)]
         [Route("{id}"), HttpDelete]       
         public IActionResult Delete(int? id) =>
@@ -59,6 +88,11 @@ namespace Armazem.Controllers
             ApiOk("Produto deletado com sucesso.") :
             ApiNotFound("Erro ao deletar o produto.");
 
+
+        /// <summary>
+        /// Seleciona um produto random do banco de dados.
+        /// </summary>
+        /// <returns></returns>
         [AuthorizeRoles(RoleType.Admin)]
         [Route("Random"), HttpGet]
         public IActionResult Random()
@@ -68,6 +102,11 @@ namespace Armazem.Controllers
             return ApiOk(lista[ale.Next(lista.Count())]);
         }
 
+        /// <summary>
+        /// Retorna todos os produtos criados por uma role específica
+        /// </summary>
+        /// <param name="role"></param>
+        /// <returns></returns>
         [AllowAnonymous]
         [Route("ProductsByRole/{role?}")]
         [HttpGet]

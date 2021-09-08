@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armazem", "Armazem.csproj", "{6504F8A9-61E6-48CF-A682-47184F4504F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armazem", "Armazem.csproj", "{6504F8A9-61E6-48CF-A682-47184F4504F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArmazemTest", "..\ArmazemTest\ArmazemTest.csproj", "{B3248803-B474-4159-9FA0-18141DA50268}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{6504F8A9-61E6-48CF-A682-47184F4504F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6504F8A9-61E6-48CF-A682-47184F4504F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6504F8A9-61E6-48CF-A682-47184F4504F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3248803-B474-4159-9FA0-18141DA50268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3248803-B474-4159-9FA0-18141DA50268}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3248803-B474-4159-9FA0-18141DA50268}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3248803-B474-4159-9FA0-18141DA50268}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

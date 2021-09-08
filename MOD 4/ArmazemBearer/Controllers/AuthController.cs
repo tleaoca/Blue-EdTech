@@ -22,6 +22,11 @@ namespace Armazem.Controllers
             _service = service;
         }
 
+        /// <summary>
+        /// Cria um novo usuário para autenticação.
+        /// </summary>
+        /// <param name="identityUser"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("Register")]
         [AllowAnonymous]
@@ -41,6 +46,11 @@ namespace Armazem.Controllers
             }
         }
 
+        /// <summary>
+        /// Cria um token de um usuário existente.
+        /// </summary>
+        /// <param name="identityUser"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("Token")]
         [AllowAnonymous]

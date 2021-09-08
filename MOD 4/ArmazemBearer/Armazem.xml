@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Armazem</name>
+    </assembly>
+    <members>
+        <member name="M:Armazem.Controllers.AuthController.Register(Microsoft.AspNetCore.Identity.IdentityUser)">
+            <summary>
+            Cria um novo usuário para autenticação.
+            </summary>
+            <param name="identityUser"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Armazem.Controllers.AuthController.Token(Microsoft.AspNetCore.Identity.IdentityUser)">
+            <summary>
+            Cria um token de um usuário existente.
+            </summary>
+            <param name="identityUser"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Armazem.Controllers.ProductController.Index">
+            <summary>
+            Retorna lista de todos os produtos no banco de dados.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Armazem.Controllers.ProductController.Index(System.Nullable{System.Int32})">
+            <summary>
+            Retorna produto específico do banco de dados.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Armazem.Controllers.ProductController.Create(Armazem.Models.Product)">
+            <summary>
+            Cria um novo produto no banco de dados.
+            </summary>
+            <param name="prod"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Armazem.Controllers.ProductController.Update(Armazem.Models.Product)">
+            <summary>
+            Atualiza o produto informado no banco de dados.
+            </summary>
+            <param name="prod"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Armazem.Controllers.ProductController.Delete(System.Nullable{System.Int32})">
+            <summary>
+            Deleta um produto informado do banco de dados.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Armazem.Controllers.ProductController.Random">
+            <summary>
+            Seleciona um produto random do banco de dados.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Armazem.Controllers.ProductController.ProductsByRole(System.String)">
+            <summary>
+            Retorna todos os produtos criados por uma role específica
+            </summary>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

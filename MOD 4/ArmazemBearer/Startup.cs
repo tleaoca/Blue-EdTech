@@ -13,6 +13,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
+using System.IO;
+using System.Reflection;
 using System.Text;
 
 namespace Armazem
@@ -32,7 +34,83 @@ namespace Armazem
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Armazem", Version = "v1" });
+                c.SwaggerDoc("v1",
+                    new OpenApiInfo
+                    {
+                        Title = "Armazem",
+                        Description = "API do Armazem Blue",
+                        Contact = new OpenApiContact
+                        {
+                            Name = "Thiago Leão",
+                            Email = "tleaoca@gmail.com",
+                            Url = new Uri("http://www.bluedtech.com.br")
+                        },
+                        License = new OpenApiLicense
+                        {
+                            Name = "Blue License",
+                            Url = new Uri("http://www.bluedtech.com.br")
+                        },
+                        Version = "v1"
+                    }
+                );
+
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = $"{Path.Combine(AppContext.BaseDirectory, xmlFile)}";
+                c.IncludeXmlComments(xmlPath);
+
+                //#region Swagger Basic Authentication
+                //c.AddSecurityDefinition("basic", new OpenApiSecurityScheme
+                //{
+                //    Name = "Authorization",
+                //    Type = SecuritySchemeType.Http,
+                //    Scheme = "basic",
+                //    In = ParameterLocation.Header,
+                //    Description = "Basic Authentication header."
+                //});
+                //c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                //{
+                //    {
+                //        new OpenApiSecurityScheme
+                //        {
+                //            Reference = new OpenApiReference
+                //            {
+                //                Type = ReferenceType.SecurityScheme,
+                //                Id = "basic"
+                //            }
+                //        },
+                //        new string[] { }
+                //    }
+                //});
+                //#endregion
+
+                //#region Swagger Bearer Authentication
+                //c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                //{
+                //    Name = "Authorization",
+                //    Type = SecuritySchemeType.ApiKey,
+                //    Scheme = "Bearer",
+                //    In = ParameterLocation.Header,
+                //    Description = "JWT Authorization header using Bearer scheme."
+                //});
+                //c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                //{
+                //    {
+                //        new OpenApiSecurityScheme
+                //        {
+                //            Reference = new OpenApiReference
+                //            {
+                //                Type = ReferenceType.SecurityScheme,
+                //                Id = "Bearer"
+                //            },
+                //            Scheme = "oauth2",
+                //            Name = "Bearer",
+                //            In = ParameterLocation.Header,
+                //        },
+                //        new List<string>()
+                //    }
+                //});
+                //#endregion
+
             });
 
             services.AddDbContext<MAContext>(options =>
